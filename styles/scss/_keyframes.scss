@@ -1,0 +1,94 @@
+/**
+*
+*    7. Animations
+*
+**/
+
+@keyframes scale-z {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes circle {
+    0% {
+        opacity: 0
+    }
+
+    5% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(-50%,-50%) scale(2.5)
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0)
+    }
+
+    50% {
+        transform: scale(1.15)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes wave-error {
+    0% {
+        border-color: #33363d
+    }
+
+    50% {
+        border-color: #ff4545
+    }
+
+    to {
+        border-color: #33363d
+    }
+}
+
+@keyframes changing-color{
+    0% {
+        --default-button-first-color: #28c1f1;
+        --default-button-second-color: #28f1a9
+    }
+
+    50% {
+        --default-button-first-color: #28f1a9;
+        --default-button-second-color: #28c1f1
+    }
+
+    to {
+        --default-button-first-color: #28c1f1;
+        --default-button-second-color: #28f1a9
+    }
+}
+
+@keyframes rotate-load {
+    0% {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes loading-circle {
+    0% {
+        stroke-dashoffset: 0
+    }
+
+    to {
+        stroke-dashoffset: -400
+    }
+}

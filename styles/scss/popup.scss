@@ -7,7 +7,7 @@
 
 #css-outliner-popup {
     position: absolute;
-    font-size: 17px;
+    font-size: $popup-font-size;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,11 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        background: linear-gradient(165.59deg, #2f3136 13.65%, #121416 81.89%), #ffffff;
+        background: $popup-light-mode-background;
+
+        @media (prefers-color-scheme: dark) {
+            background: $popup-dark-mode-background;
+        }
 
         > #css-outliner-container {
             position: relative;

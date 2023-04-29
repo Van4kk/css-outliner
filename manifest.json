@@ -8,6 +8,9 @@
 	"permissions": [
     	"activeTab"
     ],
+	"background": {
+		"service_worker": "js/background.js"
+	},
 	"icons": {
 		"16": "assets/logo/css-outliner-logo-default_16x16.png",
 		"48": "assets/logo/css-outliner-logo-default_48x48.png",
@@ -23,7 +26,7 @@
 				"styles/scss/main.css"
 			],
 			"js": [
-				"js/content.js"
+				"js/popup.js"
 			]
 		}
 	]
