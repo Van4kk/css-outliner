@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "CSS Outliner",
+	"short_name": "CSS Outliner",
+	"description": "Adding outline for chosen HTML tag and its children",
+	"version": "1.0",
+	"homepage_url": "https://github.com/Van4kk/CSS-Outliner",
+	"permissions": [
+    	"activeTab"
+    ],
+	"icons": {
+		"16": "assets/logo/css-outliner-logo-default_16x16.png",
+		"48": "assets/logo/css-outliner-logo-default_48x48.png",
+		"128": "assets/logo/css-outliner-logo-default_128x128.png"
+	},
+	"browser_action": {
+		"default_popup": "html/popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"css": [
+				"css/popup.css"
+			],
+			"js": [
+				"js/content.js"
+			]
+		}
+	]
+}
