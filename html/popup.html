@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Outliner</title>
+	<link rel="stylesheet" type="text/css" href="/css/popup.css">
+</head>
+<body id="css-outliner-popup">
+	<div id="css-outliner-base">
+		<div id="css-outliner-container">
+			<div id="css-outliner-wrapper">
+				<div id="css-outliner-main">
+					<div id="css-outliner-content">
+						<div id="css-outliner-header">
+							<div id="css-outliner-bug-wrapper">
+								<div id="css-outliner-bug-button">
+									<img src="/assets/icons/css-outliner-bell.svg" width="23" height="18" alt="Bug Svg">
+								</div>
+							</div>
+							<div id="css-outliner-menu-wrapper">
+								<div id="css-outliner-menu-button">
+									<img src="/assets/icons/css-outliner-menu.svg" width="23" height="18" alt="Menu Svg">
+								</div>
+							</div>
+						</div>
+						<div id="css-outliner-center">
+							<div id="css-outliner-ping-loading">
+								<div id="css-outliner-circles">
+									<div class="css-outliner-circle"></div>
+									<div class="css-outliner-circle"></div>
+									<div class="css-outliner-circle"></div>
+								</div>
+							</div>
+						</div>
+						<div id="css-outliner-start-scan-wrapper">
+							<div id="css-outliner-start-scan-button-wrapper" display: flex;
+								 flex-direction: column;>
+								<div id="css-outliner-start-scan-center" display: flex;
+									 flex-direction: column;
+									 gap: 20px;
+									 background: #222429;
+									 border-radius: 24px;
+									 padding: 20px;>
+									<div id="css-outliner-start-scan-center-top"     display: flex;
+										 align-items: center;
+										 justify-content: space-between;
+										 width: 100%;
+										 gap: 15px;>
+
+									</div>
+									<div id="css-outliner-start-scan-center-bottom"     display: flex;
+										 gap: 8px;>
+										<button id="css-outliner-start-scan-button"    display: flex;
+											 height: 44px;
+											 border-radius: 12px;
+											 background: #28f1a9;
+											 align-items: center;
+											 width: 100%;
+											 justify-content: center;
+											 cursor: pointer;
+											 transition: .3s;
+											 outline: 1px solid transparent; role="button">
+											<span id="css-outliner-start-scan-button-title">Start Scan</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h1 id="css-outliner-heading">Click on "Start scan" and start debugging</h1>
+	<script src="/popup.js"></script>
+</body>
+</html>
