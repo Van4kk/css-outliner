@@ -13,7 +13,7 @@
 
 /**
 *
-*    1. Initializing styles
+*    1. Initializing styless
 *
 **/
 
@@ -27,7 +27,7 @@ html, body {
     height: $popup-height;
     margin: 0;
     padding: 0;
-    font-family: "Work Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-family: $css-outliner-font-family;
     font-weight: $popup-default-font-w;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -40,4 +40,30 @@ img {
 
 svg:not(:root) {
     overflow-clip-margin: content-box;
+}
+
+textarea {
+    resize: none;
+}
+
+input, textarea {
+    font-family: Golos,Arial,sans-serif;
+    outline: none;
+    border: none;
+    background: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #bcc9db;
+}
+
+input[type='checkbox'] {
+
+}
+
+label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: #bcc9db99;
 }
