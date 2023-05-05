@@ -1,4 +1,11 @@
 .idea
 node_modules
+/dist
+/web
+.env
 Desktop.ini
 TODO.md
+*.pem
+*.pub
+*.zip
+/artifacts
