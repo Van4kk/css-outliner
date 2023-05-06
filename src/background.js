@@ -1,22 +1,22 @@
-chrome.browserAction.onClicked.addListener(() => {
-    chrome.windows.create({
-        type: 'popup',
-        url: 'popup.html',
-        left: 100,
-        top: 100,
-        width: 400,
-        height: 400,
+try{
+    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+        if(changeInfo.status === 'complete') {
+            chrome.scripting.executeScript({
+                files: ['/js/css-outliner.js'],
+                target: {tabId: tab.id}
+            });
+        }
     });
-});
 
-// browser.browserAction.onClicked.addListener(() => {
-//     browser.tabs.executeScript({
-//         file: './js/content-script.js',
-//     });
-// });
-//
-// browser.runtime.onMessage.addListener(async ({ type }) => {
-//     if (type === 'screenshot') {
-//         return await browser.tabs.captureVisibleTab({quality: 70});
-//     }
-// });
+    chrome.runtime.onInstalled.addListener(details => {
+        chrome.tabs.create({
+            url: "../public/on_installed.html"
+        })
+
+        if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+            chrome.runtime.setUninstallURL('https://github.com/Van4kk/css-outliner/blob/main/WHY.md');
+        }
+    })
+}catch(e){
+    console.log(e);
+}
