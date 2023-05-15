@@ -8,9 +8,6 @@
 	"version_name": "1.0 Open Beta",
 	"homepage_url": "https://github.com/Van4kk/CSS-Outliner",
 	"author": "Cucu Ionuț - Nicu",
-	"permissions": [
-    	"activeTab"
-    ],
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
@@ -18,7 +15,10 @@
 			"run_at": "document_end"
 		}
 	],
-	"host_permissions": ["<all_urls>"],
+	"permissions": [
+		"activeTab"
+	],
+	"host_permissions": ["*://*/*", "<all_urls>"],
 	"icons": {
 		"16": "public/logo/css-outliner-logo-default_16x16.png",
 		"48": "public/logo/css-outliner-logo-default_48x48.png",
@@ -28,5 +28,9 @@
 		"default_popup": "public/popup.html"
 	},
 	"offline_enabled": true,
-	"incognito": "not_allowed"
+	"incognito": "not_allowed",
+	"options_ui": {
+		"page": "options/options.html",
+		"open_in_tab": false
+	}
 }

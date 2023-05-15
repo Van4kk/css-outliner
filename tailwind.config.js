@@ -1,8 +1,12 @@
 module.exports = {
     purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-    darkMode: false,
+    // darkMode: true,
     mode: 'jit',
     theme: {
+        fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+            'code': ['Fira Code', 'monospace'],
+        },
         fontSize: {
             xs: '12px',
             sm: '14px',
@@ -65,7 +69,19 @@ module.exports = {
                 10: '40px',
             },
             colors: {
-                primary: '#3B82F6',
+                blue: 'rgba(38, 77, 228, 1)',
+                white: 'rgba(255, 255, 255, 1)',
+                black: 'rgba(0, 0, 0, 1)',
+                horizon: 'rgba(34, 36, 41, 1)', //background
+                icons: 'rgba(0, 0, 0, 1)',
+
+                //dark mode colors ↓
+                'light-blue': 'rgba(41, 101, 241, 1)',
+                'blue-darkmode': 'rgba(41, 101, 241, 1)',
+                'black-darkmode': 'rgba(41, 101, 241, 1)',
+                'light-blue-darkmode': 'rgba(41, 101, 241, 1)',
+                'horizon-darkmode': 'rgba(235, 235, 235, 1)', //background on dark mode
+                'icons-darkmode': 'rgba(188, 201, 219, 1)',
             },
         },
     },

@@ -37,7 +37,13 @@ module.exports = {
             .loader('url-loader')
             .tap((options) => Object.assign(options, { limit: 30240 }))
     },
-    pages: {},
+    pages: {
+      popup: {
+        template: 'public/browser-extension.html',
+        entry: './src/popup/main.js',
+        title: 'Popup'
+      }
+    },
     pluginOptions: {
         browserExtension: {
             componentOptions: {
@@ -47,7 +53,8 @@ module.exports = {
                 contentScripts: {
                     entries: {
                         'content-script': [
-                            'src/css-outliner.js',
+                          'src/css-outliner.js',
+                          'src/content-scripts/content-script.js'
                         ],
                     },
                 },

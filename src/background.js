@@ -1,22 +1,7 @@
-try{
-    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-        if(changeInfo.status === 'complete') {
-            chrome.scripting.executeScript({
-                files: ['/js/css-outliner.js'],
-                target: {tabId: tab.id}
-            });
-        }
-    });
+browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log('Hello from the background')
 
-    chrome.runtime.onInstalled.addListener(details => {
-        chrome.tabs.create({
-            url: "../public/on_installed.html"
-        })
-
-        if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-            chrome.runtime.setUninstallURL('https://github.com/Van4kk/css-outliner/blob/main/WHY.md');
-        }
-    })
-}catch(e){
-    console.log(e);
-}
+  browser.tabs.executeScript({
+    file: 'content-script.js',
+  });
+})

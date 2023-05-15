@@ -9,3 +9,4 @@ TODO.md
 *.pub
 *.zip
 /artifacts
+package-lock.json

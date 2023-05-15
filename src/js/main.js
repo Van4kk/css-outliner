@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import App from './App.vue?shadow';
+import App from './App.vue';
 
 const app = createApp(App);
 
