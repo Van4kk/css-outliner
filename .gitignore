@@ -10,8 +10,7 @@ TODO.md
 *.zip
 /artifacts
 package-lock.json
-webpack.mix.js
-vue.config.js
-postcss.config.js
-tailwind.config.js
 mix-manifest.json
+manifest.json
+manifest1.json
+chrome
