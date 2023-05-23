@@ -1,29 +1,36 @@
 {
-  "manifest_version": 2,
-  "name": "__MSG_extName__",
-  "homepage_url": "http://localhost:8080/",
-  "description": "A Vue Browser Extension",
-  "default_locale": "en",
-  "permissions": [
-    "activeTab"
-  ],
-  "icons": {
-    "16": "icons/16.png",
-    "48": "icons/48.png",
-    "128": "icons/128.png"
-  },
-  "background": {
-    "scripts": [
-      "js/background.js"
-    ],
-    "persistent": false
-  },
-  "browser_action": {
-    "default_popup": "popup.html",
-    "default_title": "__MSG_extName__",
-    "default_icon": {
-      "19": "icons/19.png",
-      "38": "icons/38.png"
-    }
-  }
+	"manifest_version": 3,
+	"name": "CSS Outliner",
+	"short_name": "CSS Outliner",
+	"message": "CSS Outliner",
+	"description": "Adding outline for chosen HTML element.",
+	"version": "1.0",
+	"version_name": "1.0 Open Beta",
+	"homepage_url": "https://github.com/Van4kk/CSS-Outliner",
+	"author": "Cucu Ionuț - Nicu",
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["js/css-outliner.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+		"activeTab"
+	],
+	"host_permissions": ["*://*/*", "<all_urls>"],
+	"icons": {
+		"16": "assets/logo/css-outliner-logo-default_16x16.png",
+		"48": "assets/logo/css-outliner-logo-default_48x48.png",
+		"128": "assets/logo/css-outliner-logo-default_128x128.png"
+	},
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"offline_enabled": true,
+	"incognito": "not_allowed",
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": false
+	}
 }

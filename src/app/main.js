@@ -1,10 +1,10 @@
 import { createApp } from "vue";
-import App from './App.vue';
+import App from './App.vue'
 
 const app = createApp(App);
 
 export function insertShadowRoot(shadowRoot) {
-    App.shadowRoot = shadowRoot;
+    app.mount(shadowRoot);
 }
 
 export default app;

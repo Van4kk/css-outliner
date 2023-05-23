@@ -1,5 +1,8 @@
 module.exports = {
-    purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    content: [
+        "./src/index.html",
+        "./src/**/*.{vue,js,ts,jsx,tsx}",
+    ],
     // darkMode: true,
     mode: 'jit',
     theme: {
@@ -67,6 +70,15 @@ module.exports = {
                 8: '32px',
                 9: '36px',
                 10: '40px',
+            },
+            zIndex: {
+              'full': 9999,
+            },
+            maxHeight: {
+                'for-popup': 'calc(100vh - 3rem)',
+            },
+            minHeight: {
+                '500': '500px'
             },
             colors: {
                 blue: 'rgba(38, 77, 228, 1)',

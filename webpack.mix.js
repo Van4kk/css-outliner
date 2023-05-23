@@ -1,15 +1,23 @@
 let mix = require('laravel-mix');
 
 mix.setPublicPath('./')
-    .sass('src/assets/styles/scss/main.scss', 'chrome/css')
-    .js('src/assets/js/background.js', 'chrome/js')
-    .js('src/assets/js/main.js', 'chrome/js').vue()
-    .copy('src/assets/icons/', 'chrome/assets/icons/')
-    .copy('src/assets/icons/logo/', 'chrome/assets/logo/')
-    .copy('src/assets/fonts/', 'chrome/assets/fonts/')
-    .copy('src/manifest.json', 'chrome/manifest.json')
-    .copy('src/assets/_locales/', 'chrome/_locales/')
-    .copy('src/assets/*.html', 'chrome/')
+    .webpackConfig({
+        resolve: {
+            extensions: [".*",".wasm",".mjs",".js",".jsx",".json",".vue",".*",".html",".css",".svg"],
+        },
+    })
+    //.sass('src/assets/styles/scss/main.scss', 'chrome/css')
+    .js('src/app/*.js', 'chrome/')
+    .js('src/app/main.js', 'chrome/js').vue()
+    .copy('src/app/assets/icons/*', 'chrome/assets/icons/')
+    .copy('src/app/assets/icons/logo/*', 'chrome/assets/logo/')
+    .copy('src/app/assets/fonts/', 'chrome/assets/fonts/')
+    .copy('src/manifest.json', 'chrome/')
+    .copy('src/_locales/', 'chrome/_locales/')
+    .copy('src/app/assets/*.html', 'chrome/')
+    .postCss('src/app/assets/styles/css/maintailwind.css', 'chrome/css/main.css', [
+        require("tailwindcss")
+    ])
     .options({
         processCssUrls: false
     });
