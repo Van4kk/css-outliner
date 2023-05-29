@@ -1,0 +1,1 @@
+# Thanks for installing my extension, hope it will help you :heart:
