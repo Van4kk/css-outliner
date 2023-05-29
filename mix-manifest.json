@@ -1,5 +1,6 @@
 {
-    "/chrome/css-outliner.js": "/chrome/css-outliner.js",
+    "/chrome/js/css-outliner.js": "/chrome/js/css-outliner.js",
+    "/chrome/background.js": "/chrome/background.js",
     "/chrome/js/main.js": "/chrome/js/main.js",
     "/chrome/css/main.css": "/chrome/css/main.css",
     "/chrome/assets/icons/css-outliner-arrow.svg": "/chrome/assets/icons/css-outliner-arrow.svg",
