@@ -6,10 +6,6 @@ module.exports = {
     // darkMode: true,
     mode: 'jit',
     theme: {
-        fontFamily: {
-            'poppins': ['Poppins', 'sans-serif'],
-            'code': ['Fira Code', 'monospace'],
-        },
         fontSize: {
             xs: '12px',
             sm: '14px',
@@ -61,6 +57,22 @@ module.exports = {
             96: '384px',
         },
         extend: {
+            fontFamily: {
+                'default': ['Roboto', 'sans-serif !important'],
+                'bolder': ['Roboto Medium', 'sans-serif !important'],
+                'code': ['Code', 'monospace'],
+            },
+            width: {
+              '400': '400px',
+              '280': '280px',
+            },
+            height: {
+              '400': '400px',
+            },
+            boxShadow: {
+              'error-modal-wrapper': '1px 2px 10px 0 rgba(0, 0, 0, 0.3)',
+              'error-modal': '4px 8px 12px 0 rgba(0, 0, 0, 0.4)',
+            },
             lineHeight: {
                 3: '12px',
                 4: '16px',
@@ -88,12 +100,53 @@ module.exports = {
                 icons: 'rgba(0, 0, 0, 1)',
 
                 //dark mode colors ↓
-                'light-blue': 'rgba(41, 101, 241, 1)',
                 'blue-darkmode': 'rgba(41, 101, 241, 1)',
                 'black-darkmode': 'rgba(41, 101, 241, 1)',
                 'light-blue-darkmode': 'rgba(41, 101, 241, 1)',
                 'horizon-darkmode': 'rgba(235, 235, 235, 1)', //background on dark mode
                 'icons-darkmode': 'rgba(188, 201, 219, 1)',
+            },
+            keyframes: {
+                'scale-to-z': {
+                    from: { transform: 'scale(1)' },
+                    to: { transform: 'scale(1.1)' }
+                },
+                'circle': {
+                    '0%': { opacity: 0 },
+                    '5%': { opacity: 1 },
+                    to: { opacity: 0, transform: 'translate(-50%,-50%) scale(2.5)' }
+                },
+                'bounce-in': {
+                    '0%': { transform: 'scale(0)' },
+                    '50%': { transform: 'scale(1.15)' },
+                    to: { transform: 'scale(1)' }
+                },
+                'rotate-load': {
+                    '0%': { transform: 'rotate(0)' },
+                    to: { transform: 'rotate(360deg)' }
+                },
+                'loading-circle': {
+                    '0%': { 'stroke-dashoffset': 0 },
+                    to: { 'stroke-dashoffset': -400 },
+                },
+                'show-modal': {
+                    '0%': { transform: 'scale(0)' },
+                    '60%': { transform: 'scale(1.1)' },
+                    '80%': { transform: 'scale(0.95)' },
+                    '100%': { transform: 'scale(1)' },
+                },
+                'hide-modal': {
+                    '0%': {transform: 'scale(1)'},
+                    '20%': {transform: 'scale(1.1)'},
+                    '100%': {transform: 'scale(0)'},
+                }
+            },
+            animation: {
+                'scale-z': 'scale-z',
+                'circle': 'circle',
+                'bounce-in': 'bounce-in',
+                'show-modal': 'show-modal 0.7s ease-in-out',
+                'hide-modal': 'hide-modal 0.6s ease-in-out both',
             },
         },
     },
