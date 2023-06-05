@@ -110,3 +110,26 @@ export function getNumber(text) {
 export function filterRules(element, rules) {
     return rules.filter(({selectorText}) => element.matches(selectorText));
 }
+
+export function setAttributes(elem, obj) {
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            elem[prop] = obj[prop];
+        }
+    }
+}
+
+export function addAppCss(contentCss) {
+    const appStyles = document.createElement('style');
+    appStyles.innerText = contentCss;
+
+    document.body.appendChild(appStyles);
+
+    return function () {
+        document.body.removeChild(appStyles);
+    };
+}
+
+export function isIdenticalExisting(element){
+    return document.querySelector(element);
+}
