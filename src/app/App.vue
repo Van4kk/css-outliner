@@ -1,14 +1,14 @@
 <template>
-    <main class="app">
-<!--        <html-element></html-element>-->
-        <app-pages></app-pages>
+    <main id="app">
+        <ElementDetails />
+        <AppPages />
     </main>
 </template>
 <script>
-    import AppPages from "./components/AppPages.vue";
-    //import HtmlElement from "./components/Element.vue";
+import AppPages from "./components/AppPages.vue";
+import ElementDetails from "./components/ElementDetails.vue";
 
-    export default {
-        components: { /*HtmlElement,*/ AppPages },
-    };
+export default {
+    components: { ElementDetails, AppPages },
+};
 </script>
