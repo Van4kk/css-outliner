@@ -1,4 +1,5 @@
-@import "grid.css";
+@import "outline.css";
+@import "background.css";
 @font-face {
     font-family: "Roboto Medium";
     font-style: normal;
