@@ -1,0 +1,33 @@
+@import "grid.css";
+@font-face {
+    font-family: "Roboto Medium";
+    font-style: normal;
+    font-weight: 600;
+    src: local("fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: "Code";
+    font-style: normal;
+    font-weight: 400;
+    src: local("SourceCodePro-Regular.ttf");
+}
+#css-outliner {
+    z-index: 9999;
+    position: relative;
+}
+.hide-fixed [is-fixed] {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+.hover-element {
+    outline: 1px solid #f56565 !important;
+}
+[active-element] {
+    outline: 1px solid #4299e1 !important;
+}
