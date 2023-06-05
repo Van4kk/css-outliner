@@ -174,7 +174,7 @@
     outline: 1px solid #b31e00!important
 }
 
-label {
+.css-outliner-display-grid label {
     outline: 1px solid #ee8900!important
 }
 
@@ -226,19 +226,19 @@ label {
     outline: 1px solid #449da6!important
 }
 
-.css-outliner-display-grid .css-outliner-display-grid del {
+.css-outliner-display-grid del {
     outline: 1px solid #bf0000!important
 }
 
-.css-outliner-display-grid .css-outliner-display-grid ins {
+.css-outliner-display-grid ins {
     outline: 1px solid #400000!important
 }
 
-.css-outliner-display-grid .css-outliner-display-grid img {
+.css-outliner-display-grid img {
     outline: 1px solid #22746b!important
 }
 
-.css-outliner-display-grid .css-outliner-display-grid iframe {
+.css-outliner-display-grid iframe {
     outline: 1px solid #64a7a0!important
 }
 
