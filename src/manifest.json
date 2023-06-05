@@ -1,37 +1,32 @@
 {
 	"manifest_version": 3,
-	"default_locale": "en",
 	"name": "CSS Outliner",
 	"short_name": "CSS Outliner",
-	"message": "__MSG_extName__",
-	"description": "__MSG_extName__",
+	"description": "Adding outline for chosen HTML element and many other tools for debugging CSS.",
 	"version": "1.0",
 	"version_name": "1.0 Beginning",
 	"homepage_url": "https://github.com/Van4kk/CSS-Outliner",
 	"author": "Cucu Ionuț - Nicu",
-	"content_scripts": [
-		{
-			"matches": ["<all_urls>"],
-			"js": ["js/css-outliner.js"],
-			"run_at": "document_end"
-		}
-	],
-	"permissions": [
-		"activeTab"
-	],
-	"background": {
-		"service_worker": "background.js",
-		"type": "module"
-	},
-	"host_permissions": ["*://*/*", "<all_urls>"],
 	"icons": {
 		"16": "assets/logo/css-outliner-logo-default_16x16.png",
 		"48": "assets/logo/css-outliner-logo-default_48x48.png",
 		"128": "assets/logo/css-outliner-logo-default_128x128.png"
 	},
-	"browser_action": {
-		"default_popup": "popup.html"
+	"action": {
+		"default_icon": {
+			"16": "assets/logo/css-outliner-logo-default_16x16.png",
+			"48": "assets/logo/css-outliner-logo-default_48x48.png",
+			"128": "assets/logo/css-outliner-logo-default_128x128.png"
+		},
+		"default_title": "Click on the icon for debugging CSS!"
 	},
-	"offline_enabled": true,
-	"incognito": "not_allowed"
+	"permissions": [
+		"tabs",
+		"activeTab",
+		"scripting"
+	],
+	"background": {
+		"service_worker": "js/background.js"
+	},
+	"host_permissions": ["<all_urls>"]
 }

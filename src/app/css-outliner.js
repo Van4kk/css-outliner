@@ -1,47 +1,37 @@
-import app, { insertShadowRoot } from './main';
+import { createApp } from "vue";
+import App from './App.vue?shadow';
+import { addAppCss, isIdenticalExisting, setAttributes } from "./utils/helpers";
+import cssOutlinerContainerStyles from '!to-string-loader!css-loader!postcss-loader!./assets/styles/css/ccs-outliner-app-container.css';
+import cssOutlinerAppCssStyles from '!to-string-loader!css-loader!postcss-loader!./assets/styles/css/ccs-outliner.css';
 
-function generateCSS() {
-    const style = document.createElement('style');
-    style.innerText = contentCss;
+/**
+ *
+ * ↓ This method of compiling Vue3 app into shadow root is inspired from the link below ↓
+ * @link https://github.com/Kholid060/inspect-css/blob/master/src/content-scripts/main.js
+ *
+ */
 
-    document.body.appendChild(style);
+const app = createApp(App);
 
-    return function () {
-        document.body.removeChild(style);
-    };
-}
-
-function generateContent(container) {
-    const content = document.createElement('div');
-
-    const style = document.createElement('style');
-    style.innerText = appCss;
-
-    app.mount(content);
-
-    container.shadowRoot.appendChild(content);
-    container.shadowRoot.appendChild(style);
-
-    return function () {
-        app.unmount();
-        document.body.removeChild(container);
-    };
+function insertShadowRoot(shadowRoot) {
+    App.shadowRoot = shadowRoot;
 }
 
 (() => {
-    const isAppExist = document.querySelector('.inspect-css');
+    if (isIdenticalExisting("#css-outliner, .css-outliner")) return;
 
-    if (isAppExist) return;
+    //Creating shadow root app wrapper
+    const appContainer= document.createElement("div");
+    appContainer.attachShadow({ mode: "open" });
+    setAttributes(appContainer, {
+        id: "css-outliner",
+        class: "css-outliner-shadow-wrapper",
+    });
 
-    const container = document.createElement('div');
+    insertShadowRoot(appContainer.shadowRoot);
 
-    container.attachShadow({ mode: 'open' });
-    container.classList = 'inspect-css';
-
-    insertShadowRoot(container.shadowRoot);
-
-    const content = generateContent(container);
-    const css = generateCSS();
+    const content = generateAppContent(appContainer);
+    const css = addAppCss(cssOutlinerContainerStyles);
 
     app.config.globalProperties.destoryExtension = () => {
         content();
@@ -50,10 +40,29 @@ function generateContent(container) {
         const activeElement = document.querySelector('[active-element]');
         if (activeElement) activeElement.removeAttribute('active-element');
 
-        ['pause', 'display-grid'].forEach((classes) => {
+        ['css-outliner-pause', 'css-outliner-display-grid', 'css-outliner-stop'].forEach((classes) => {
             document.body.classList.remove(classes);
         });
     };
 
-    document.body.appendChild(container);
+    document.body.appendChild(appContainer);
 })();
+
+function generateAppContent(container) {
+    //Container inside shadow root
+    const appContent= document.createElement("div")
+
+    //App styles
+    const style = document.createElement('style');
+    style.innerText = cssOutlinerAppCssStyles;
+
+    app.mount(appContent); //Mounting Vue3 app
+
+    container.shadowRoot.appendChild(appContent);
+    container.shadowRoot.appendChild(style);
+
+    return function () {
+        app.unmount();
+        document.body.removeChild(container);
+    };
+}
