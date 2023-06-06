@@ -7,12 +7,12 @@
         <br>
         <h1 align="center" style="color: #ffffff">Css Outliner</h1>
     </a>
-    <br>
 </div>
 
 <h4 align="center">
     Adding outline for chosen <b>HTML</b> tag and many other tools for <b>CSS3</b>
 </h4>
+<br>
 
 <p align="center">
     <a href="">
