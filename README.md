@@ -1,16 +1,14 @@
 # Coming Soon...
 
-<h1 align="center">
+<div align="center">
     <br>
-    <a href="#">
-        <img src="src/app/assets/logo/css-outliner-logo.png" height="200" alt="Logo">
+    <a href="#" style="text-decoration: none">
+        <img src="src/app/assets/logo/css-outliner-logo.png" height="300" alt="Logo">
         <br>
-        <h2 align="center" style="color: #ffffff">Css Outliner</h2>
+        <h1 align="center" style="color: #ffffff">Css Outliner</h1>
     </a>
     <br>
-</h1>
-
-<hr>
+</div>
 
 <h4 align="center">
     Adding outline for chosen <b>HTML</b> tag and many other tools for <b>CSS3</b>
@@ -82,6 +80,6 @@ MIT &copy; [Van4kk](https://github.com/Van4kk/)
 <hr>
 
 <div align="center">
-    Give a :star: to the extension if you liked it.
-    Made with :heart: by [Van4kk](https://github.com/Van4kk/)
+    Give a :star: to the extension if you liked it. <br>
+    Made with :heart: by <a href="https://github.com/Van4kk/">Van4kk</a>
 </div>
