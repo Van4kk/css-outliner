@@ -1,4 +1,4 @@
-# Coming Soon...
+### Coming Soon...
 
 <div align="center">
     <br>
@@ -38,25 +38,25 @@
     <a href="#license">License</a>
 </p>
 
-<hr>
+<br>
 
 ## Features
 
-<hr>
+<br>
 
 ## Download
 
-<hr>
+<br>
 
 ## Changelog
 
-<hr>
+<br> 
 
 ## Appearance
 
 • inspired
 from [4ebur.net – Best VPN Proxy](https://chrome.google.com/webstore/detail/4eburnet-%E2%80%93-best-vpn-proxy/bpoljniljbghlopcdaojdpodmnjffdeb)
-<hr>
+<br>
 
 ## Support
 
@@ -72,7 +72,7 @@ from [4ebur.net – Best VPN Proxy](https://chrome.google.com/webstore/detail/4e
 <div style="display: flex">
     • Opera &nbsp; <img src="src/app/assets/images/opera.svg" width="25" height="25" alt="Chrome Logo"><br>
 </div>
-<hr>
+<br>
 
 ## Licence
 
