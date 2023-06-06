@@ -40,25 +40,31 @@
 
 <br>
 
-## Features
+## Features :art:
 
 <br>
 
-## Download
+## Download :open_file_folder:
 
 <br>
 
-## Changelog
+## Changelog :hammer_and_pick:
+<details>
+    <summary>Version 1.0.0 The Beginning :orthodox_cross:</summary>
+
+    1. 
+
+</details>
 
 <br> 
 
-## Appearance
+## Appearance :framed_picture:
 
 • inspired
 from [4ebur.net – Best VPN Proxy](https://chrome.google.com/webstore/detail/4eburnet-%E2%80%93-best-vpn-proxy/bpoljniljbghlopcdaojdpodmnjffdeb)
 <br>
 
-## Support
+## Support :call_me_hand:
 
 <div style="display: flex">
     • Chrome &nbsp; <img src="src/app/assets/images/chrome.png" width="25" height="25" alt="Chrome Logo"><br>
@@ -72,9 +78,8 @@ from [4ebur.net – Best VPN Proxy](https://chrome.google.com/webstore/detail/4e
 <div style="display: flex">
     • Opera &nbsp; <img src="src/app/assets/images/opera.svg" width="25" height="25" alt="Chrome Logo"><br>
 </div>
-<br>
 
-## Licence
+## Licence :book:
 
 MIT &copy; [Van4kk](https://github.com/Van4kk/)
 <hr>
