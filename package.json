@@ -21,6 +21,7 @@
         "@heroicons/vue": "^2.0.18",
         "@popperjs/core": "2.11.7",
         "@vue/compiler-sfc": "^3.2.47",
+        "@vueuse/core": "^10.1.2",
         "autoprefixer": "10.4.14",
         "colorthief": "^2.2.0",
         "cross-env": "^7.0.3",
