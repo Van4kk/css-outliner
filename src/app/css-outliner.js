@@ -33,7 +33,7 @@ function insertShadowRoot(shadowRoot) {
     const content = generateAppContent(appContainer);
     const css = addAppCss(cssOutlinerContainerStyles);
 
-    app.config.globalProperties.destoryExtension = () => {
+    app.config.globalProperties.destroyExtension = () => {
         content();
         css();
 
