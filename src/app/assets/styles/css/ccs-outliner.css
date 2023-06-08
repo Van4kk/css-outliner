@@ -3,21 +3,45 @@
 @import "tailwindcss/utilities";
 
 @layer components {
+    /* ========================== UI ========================== */
+    /* App Container */
     #css-outliner-base {
         @apply font-default text-base text-white backdrop-blur animate-scale-z;
     }
+
+    /* Header */
+    #css-outliner-header {
+        @apply bg-gray-100 bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300;
+    }
+    #css-outliner-header-buttons-wrapper {
+        @apply bg-opacity-5 rounded-xl;
+    }
+
+    /* Navigation */
+    #css-outliner-navigation-menu {
+        @apply bg-gray-100 bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300;
+    }
+
 
     #css-outliner-text-editor {
         @apply font-code text-base pt-1;
     }
 
+    /* Spinner */
+    .css-outliner-loading-spinner {
+        @apply inline-block relative;
+    }
+    .css-outliner-loading-spinner div {
+        @apply box-border block absolute w-4/5 h-4/5 m-1/10 border-8 border-solid border-spinner rounded-[50%] animate-spinner;
+    }
+
     /* ========================== Errors ========================== */
     /* SVG Not Found Error */
     #css-outliner-svg-error-modal-wrapper {
-        @apply absolute top-2/4 left-2/4 w-400 h-400 -mt-48 -ml-48 rounded-lg shadow-error-modal-wrapper overflow-hidden bg-gray-800 text-gray-700 antialiased;
+        @apply absolute top-2/4 left-2/4 w-400 h-400 -mt-48 -ml-48 rounded-xl shadow-error-modal-wrapper overflow-hidden bg-gray-800 text-gray-700 antialiased;
     }
     #css-outliner-svg-error-modal {
-        @apply absolute w-280 h-56 top-24 left-14 bg-white rounded-lg shadow-error-modal text-center overflow-hidden animate-show-modal;
+        @apply absolute w-280 h-56 top-24 left-14 bg-white rounded-xl shadow-error-modal text-center overflow-hidden animate-show-modal;
     }
     #css-outliner-svg-error-modal .hide {
         @apply animate-hide-modal;
@@ -35,7 +59,7 @@
         @apply absolute h-10 bottom-0 left-0 right-0 bg-red-500 text-white leading-10 text-sm font-normal cursor-pointer transition duration-300 ease-in-out hover:bg-red-600;
     }
     #css-outliner-svg-error-modal #css-outliner-svg-error-modal-message span {
-        @apply py-1.5 px-0.5 bg-gray-200 text-gray-900 text-2xl leading-4 font-semibold rounded-lg border border-gray-900;
+        @apply py-1.5 px-0.5 bg-gray-200 text-gray-900 text-2xl leading-4 font-semibold rounded-xl border border-gray-900;
     }
 }
 

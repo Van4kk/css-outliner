@@ -62,13 +62,6 @@ module.exports = {
                 'bolder': ['Roboto Medium', 'sans-serif !important'],
                 'code': ['Code', 'monospace'],
             },
-            width: {
-              '400': '400px',
-              '280': '280px',
-            },
-            height: {
-              '400': '400px',
-            },
             boxShadow: {
               'error-modal-wrapper': '1px 2px 10px 0 rgba(0, 0, 0, 0.3)',
               'error-modal': '4px 8px 12px 0 rgba(0, 0, 0, 0.4)',
@@ -86,11 +79,24 @@ module.exports = {
             zIndex: {
               'full': 9999,
             },
+            width: {
+                '400': '400px',
+                '280': '280px',
+                '4/5': '80%',
+            },
+            height: {
+                '400': '400px',
+                '280': '280px',
+                '4/5': '80%',
+            },
             maxHeight: {
-                'for-popup': 'calc(100vh - 3rem)',
+                'for-popup': 'calc(100vh - 2rem)',
             },
             minHeight: {
-                '500': '500px'
+                'for-popup': 'calc(100vh - 6rem)',
+            },
+            margin: {
+                '1/10': '10%',
             },
             colors: {
                 blue: 'rgba(38, 77, 228, 1)',
@@ -105,6 +111,8 @@ module.exports = {
                 'light-blue-darkmode': 'rgba(41, 101, 241, 1)',
                 'horizon-darkmode': 'rgba(235, 235, 235, 1)', //background on dark mode
                 'icons-darkmode': 'rgba(188, 201, 219, 1)',
+
+                'spinner': '#fff transparent transparent transparent',
             },
             keyframes: {
                 'scale-to-z': {
@@ -136,10 +144,14 @@ module.exports = {
                     '100%': { transform: 'scale(1)' },
                 },
                 'hide-modal': {
-                    '0%': {transform: 'scale(1)'},
-                    '20%': {transform: 'scale(1.1)'},
-                    '100%': {transform: 'scale(0)'},
-                }
+                    '0%': { transform: 'scale(1)' },
+                    '20%': { transform: 'scale(1.1)' },
+                    '100%': { transform: 'scale(0)' },
+                },
+                'loading-spinner-animation': {
+                    '0%': { transform: 'rotate(0deg)' },
+                    '100%': { transform: 'rotate(360deg)' },
+                },
             },
             animation: {
                 'scale-z': 'scale-z',
@@ -147,6 +159,7 @@ module.exports = {
                 'bounce-in': 'bounce-in',
                 'show-modal': 'show-modal 0.7s ease-in-out',
                 'hide-modal': 'hide-modal 0.6s ease-in-out both',
+                'spinner': 'loading-spinner-animation cubic-bezier(0.5, 0, 0.5, 1) infinite',
             },
         },
     },
