@@ -18,10 +18,11 @@
 import { onMounted, onUnmounted, shallowReactive, ref } from 'vue';
 import Navigation from "./vui/sectinos/Navigation.vue";
 import Header from "./vui/sectinos/Header.vue";
+import Icon from "./vui/Icon.vue";
 
 export default {
     name: 'AppPages',
-    components: { Navigation, Header },
+    components: {Icon, Navigation, Header },
     setup() {
 
         const g = "dasdas";

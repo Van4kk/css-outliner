@@ -1,17 +1,21 @@
 <template>
     <nav id="css-outliner-header">
         <div id="css-outliner-header-buttons-wrapper">
-            <Button @click="toggleClass('css-outliner-display-outline')"
+            <button @click="toggleClass('css-outliner-display-outline')"
                     :class="{ 'active': isActive }"
                     class="p-2 rounded-lg"
-                    title="Outline"
-                    icon="grid" ><Icon name="grid" /></Button>
-            <Button @click="toggleClass('css-outliner-display-background')"
+                    title="Outline" >
+              <Icon name="grid" />
+            </button>
+            <button @click="toggleClass('css-outliner-display-background')"
                     :class="{ 'active': isActive }"
                     class="p-2 rounded-lg"
-                    title="Background Class"
-                    icon="image"><Icon name="image" /></Button>
-            />
+                    title="Background" >
+              <Icon name="image" />
+            </button>
+            <button>
+
+            </button>
 <!--            <Button @click="toggleClass('css-outliner-display-pause')"-->
 <!--                    :class="[condition.isPauseActive ? 'text-primary' : 'hover:text-white']"-->
 <!--                    class="p-2 rounded-lg"-->
@@ -32,10 +36,10 @@
 <!--            <EyeDropper />-->
         </div>
         <div class="flex-grow"></div>
-        <Button @click="closeExtension"
-                title="Close extension"
-                icon="close"
-        />
+        <button @click="closeExtension"
+                title="Close extension" >
+          <Icon name="close" />
+        </button>
     </nav>
 </template>
 <script>
@@ -45,7 +49,7 @@ import EyeDropper from "../EyeDropper.vue";
 import Button from "../Button.vue";
 
 export default {
-    components: {Button, EyeDropper, Icon},
+    components: { Button, EyeDropper, Icon },
     emits: ['move'],
     setup(props, { emit }) {
         const instance = getCurrentInstance();

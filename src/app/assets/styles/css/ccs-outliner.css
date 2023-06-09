@@ -11,7 +11,7 @@
 
     /* Header */
     #css-outliner-header {
-        @apply bg-gray-100 bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300;
+        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300;
     }
     #css-outliner-header-buttons-wrapper {
         @apply bg-opacity-5 rounded-xl;

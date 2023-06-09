@@ -25,7 +25,7 @@
 import Spinner from "./Spinner.vue";
 
 export default {
-    components: {Spinner},
+    components: { Spinner },
     props: {
         id: {
             type: String,
