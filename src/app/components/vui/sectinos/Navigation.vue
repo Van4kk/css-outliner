@@ -1,5 +1,5 @@
 <template>
-    <div id="css-outliner-nav-menu" class="bg-gray-100 bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300">
+    <div id="css-outliner-navigation-menu" :class="className">
         <button>Page 1</button>
         <button>Page 2</button>
         <button>Page 3</button>
@@ -9,6 +9,12 @@
 </template>
 <script>
 export default {
-
+    name: 'Navigation',
+    props: {
+        className: {
+            type: String,
+            default: ''
+        },
+    }
 };
 </script>
