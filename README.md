@@ -41,6 +41,17 @@
 <br>
 
 ## Features :art:
+<details>
+    <summary><h3>Key binding</h3></summary>
+    <ul>
+        <li><code>Esc</code> to exit the app</li>
+        <li><code>f</code> to freeze the window</li>
+        <li><code>c</code> copy css</li>
+        <li><code>g</code> display outline</li>
+        <li><code>b</code>display background</li>
+        <li><code>Ctrl</code> + <code>←</code> or <code>→</code> to move the extensios</li>
+    </ul>
+</details>
 
 <br>
 
