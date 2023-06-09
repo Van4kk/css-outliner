@@ -9,7 +9,7 @@ import icons from "../../utils/icons";
 import SvgNotFound from "./errors/SvgNotFound.vue";
 
 export default {
-    components: {SvgNotFound},
+    components: { SvgNotFound },
     props: {
         name: {
             type: String,

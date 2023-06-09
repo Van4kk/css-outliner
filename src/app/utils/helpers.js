@@ -119,6 +119,27 @@ export function setAttributes(elem, obj) {
     }
 }
 
+/**
+ * @source https://github.com/JoshK2/vue-spinners-css/blob/master/src/helpers/calcPropertyValue.js
+ */
+export function calculatePropertyValue(propName, originalValue, modificator) {
+    const computedStyle = {}
+    const timeQuantityOuter = originalValue.match(/^\d*\.?\d+/)[0]
+    const timeUnit = originalValue.match(/s|(ms)$/)[0]
+    const timeQuantityInner = Math.round(timeQuantityOuter * 1000 * modificator) / 1000
+
+    computedStyle[propName] = timeQuantityInner + timeUnit
+    return computedStyle
+}
+
+/**
+ * @source https://github.com/JoshK2/vue-spinners-css/blob/master/src/helpers/validateDuration.js
+ */
+export function validateDuration(duration) {
+    const re = new RegExp(/^\d*\.?\d+(s|ms)$/)
+    return re.test(duration)
+}
+
 export function addAppCss(contentCss) {
     const appStyles = document.createElement('style');
     appStyles.innerText = contentCss;

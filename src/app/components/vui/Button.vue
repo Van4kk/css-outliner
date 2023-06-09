@@ -2,20 +2,22 @@
     <component
             :is="tag"
             role="button"
-            class="ui-button relative transition"
+            :id="`${id}`"
+            class="relative transition"
             :class="[
-      color ? color : variants[variant],
-      icon ? 'p-2' : 'py-2 px-4',
-      circle ? 'rounded-full' : 'rounded-lg',
-      { 'opacity-70': disabled, 'pointer-events-none': disabled },
-    ]"
+                className,
+                color ? color : variants[variant],
+                icon ? 'p-2' : 'py-2 px-4',
+                circle ? 'rounded-full' : 'rounded-lg',
+                { 'opacity-70': disabled, 'pointer-events-none': disabled },
+            ]"
             v-bind="{ disabled: disabled, ...$attrs }"
     >
     <span class="flex justify-center h-full items-center">
-      <slot></slot>
+        <slot></slot>
     </span>
         <div v-if="loading" class="vertical-center horizontal-center">
-            <spinner :color="variant === 'default' ? 'text-primary' : 'text-white'"></spinner>
+            <Spinner :size="spinner.size" :color="spinner.color" />
         </div>
     </component>
 </template>
@@ -25,6 +27,14 @@ import Spinner from "./Spinner.vue";
 export default {
     components: {Spinner},
     props: {
+        id: {
+            type: String,
+            default: '#'
+        },
+        className: {
+            type: String,
+            default: ''
+        },
         icon: Boolean,
         disabled: Boolean,
         circle: Boolean,
@@ -40,6 +50,16 @@ export default {
         variant: {
             type: String,
             default: 'default',
+        },
+        spinner: {
+            size: {
+                type: Number,
+                default: 24,
+            },
+            color: {
+                type: String,
+                default: '#7f58af',
+            },
         },
     },
     setup() {

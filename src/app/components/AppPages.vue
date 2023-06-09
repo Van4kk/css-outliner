@@ -1,61 +1,68 @@
 <template>
     <div class="fixed z-full backdrop-blur-xl top-6" style="right: 1.5rem" ref="baseWindow">
-        <div class="max-h-for-popup min-h-500 w-80 bg-gray-900 rounded-xl flex flex-col h-full">
+        <div class="max-h-for-popup min-h-for-popup w-80 bg-gray-900 rounded-xl flex flex-col h-full">
             <!-- Top Buttons -->
-            <initial-menu></initial-menu>
-            <default-menu></default-menu>
+            <Header />
             <!-- Content -->
             <div id="css-outliner-content" class="my-2 py-2 flex-1 overflow-auto scroll">
-                <keep-alive>
-                    <component :active-element-id="state.activeElementId" :is="state.activeMenu"></component>
-                </keep-alive>
+<!--                <keep-alive>-->
+<!--                    <component :active-element-id="state.activeElementId" :is="state.activeMenu"></component>-->
+<!--                </keep-alive>-->
             </div>
             <!-- Navigation Menu -->
-            <navigation></navigation>
+            <Navigation />
         </div>
     </div>
 </template>
 <script>
 import { onMounted, onUnmounted, shallowReactive, ref } from 'vue';
 import Navigation from "./vui/sectinos/Navigation.vue";
-import InitialMenu from "./vui/sectinos/InitialMenu.vue";
-import DefaultMenu from "./vui/sectinos/DefaultMenu.vue";
-import Icon from "./vui/Icon.vue";
+import Header from "./vui/sectinos/Header.vue";
 
 export default {
-    components: {DefaultMenu, InitialMenu, Navigation, Icon},
+    name: 'AppPages',
+    components: { Navigation, Header },
     setup() {
-        const menuItems = [
-            {},
-            {},
-            {},
-            {},
-            {},
-        ]
 
-        const baseWindow = ref(null);
-
-        const state = shallowReactive({
-            activeElementId: 0,
-            activeMenu: 'edit-properties',
-        });
-        function moveElement(value) {
-            baseWindow.value.style.cssText = value;
-        }
-
-        onMounted(() => {
-            globalEvent.init(() => {
-                state.activeElementId += 1;
-            });
-        });
-        onUnmounted(() => globalEvent.removeListeners());
+        const g = "dasdas";
 
         return {
-            state,
-            menuItems,
-            baseWindow,
-            moveElement,
+            g,
         };
-    },
+    }
+    // components: {DefaultMenu, InitialMenu, Navigation, Icon},
+    // setup() {
+    //     const menuItems = [
+    //         {},
+    //         {},
+    //         {},
+    //         {},
+    //         {},
+    //     ]
+    //
+    //     const baseWindow = ref(null);
+    //
+    //     const state = shallowReactive({
+    //         activeElementId: 0,
+    //         activeMenu: 'edit-properties',
+    //     });
+    //     function moveElement(value) {
+    //         baseWindow.value.style.cssText = value;
+    //     }
+    //
+    //     onMounted(() => {
+    //         globalEvent.init(() => {
+    //             state.activeElementId += 1;
+    //         });
+    //     });
+    //     onUnmounted(() => globalEvent.removeListeners());
+    //
+    //     return {
+    //         state,
+    //         menuItems,
+    //         baseWindow,
+    //         moveElement,
+    //     };
+    // },
 };
 </script>
