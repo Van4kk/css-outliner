@@ -2,24 +2,64 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+    main #app {
+        font-family: 'Poppins', sans-serif !important;
+        font-size: 16px;
+        color: rgba(188, 201, 219, 1);
+        scroll-behavior: smooth;
+    }
+}
+
 @layer components {
     /* ========================== UI ========================== */
     /* App Container */
-    #css-outliner-base {
-        @apply font-default text-base text-white backdrop-blur animate-scale-z;
+    #css-outliner-in-root-container {
+        @apply fixed z-full backdrop-blur-lg top-6 rounded transition duration-200;
+        background: linear-gradient(161deg, rgb(47, 49, 54, 0.7) 13.65%, rgb(18, 20, 22, 0.7) 81.89%), rgb(255, 255, 255, 0.001)
+    }
+    #css-outliner-wrapper {
+        @apply max-h-for-popup min-h-for-popup w-85 p-4 flex flex-col h-full transition duration-200;
     }
 
     /* Header */
     #css-outliner-header {
-        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300;
+        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between -mt-4 rounded text-white transition duration-200;
     }
-    #css-outliner-header-buttons-wrapper {
-        @apply bg-opacity-5 rounded-xl;
+    #css-outliner-header-buttons {
+        @apply bg-white-hover bg-opacity-5 hover:bg-primary-horizon border border-white-hover hover:border-primary rounded transition duration-200;
+    }
+    #css-outliner-header-buttons button {
+        @apply hover:text-primary transition duration-200;
+    }
+    #css-outliner-header-buttons button svg {
+        @apply hover:fill-primary transition duration-200;
+    }
+
+    /* Content */
+    #css-outliner-content {
+        @apply pt-2 pb-4 flex-1 inline-table items-center h-full overflow-auto transition duration-200;
+    }
+
+    #css-outliner-welcome-wrapper {
+        @apply bg-primary flex flex-col h-full;
+    }
+    #css-outliner-welcome-content-wrapper {
+        @apply py-10 mt-1/2 text-center;
+    }
+    #css-outliner-welcome-content-wrapper span {
+        @apply inline-block p-6 rounded-full mb-4 bg-gray-100 bg-opacity-5;
+    }
+    #css-outliner-welcome-content-wrapper p {
+        @apply ;
     }
 
     /* Navigation */
     #css-outliner-navigation-menu {
-        @apply bg-gray-100 bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between px-4 rounded-xl text-gray-300;
+        @apply bg-horizon bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center border border-horizon-hover justify-between px-4 rounded text-white;
+    }
+    #css-outliner-navigation-menu button {
+        @apply p-2 bg-transparent border border-transparent rounded hover:border-primary hover:text-primary hover:bg-white-hover transition duration-200;
     }
 
 
@@ -37,30 +77,30 @@
 
     /* ========================== Errors ========================== */
     /* SVG Not Found Error */
-    #css-outliner-svg-error-modal-wrapper {
-        @apply absolute top-2/4 left-2/4 w-400 h-400 -mt-48 -ml-48 rounded-xl shadow-error-modal-wrapper overflow-hidden bg-gray-800 text-gray-700 antialiased;
-    }
-    #css-outliner-svg-error-modal {
-        @apply absolute w-280 h-56 top-24 left-14 bg-white rounded-xl shadow-error-modal text-center overflow-hidden animate-show-modal;
-    }
-    #css-outliner-svg-error-modal .hide {
-        @apply animate-hide-modal;
-    }
-    #css-outliner-svg-error-modal svg {
-        @apply mt-6;
-    }
-    #css-outliner-svg-error-modal #css-outliner-svg-error-modal-title {
-        @apply block text-lg leading-6 font-normal mt-3.5 mb-1.5 mx-0;
-    }
-    #css-outliner-svg-error-modal #css-outliner-svg-error-modal-message {
-        @apply text-sm font-light leading-5 m-0 py-0 px-8 ;
-    }
-    #css-outliner-svg-error-modal #css-outliner-svg-error-modal-button {
-        @apply absolute h-10 bottom-0 left-0 right-0 bg-red-500 text-white leading-10 text-sm font-normal cursor-pointer transition duration-300 ease-in-out hover:bg-red-600;
-    }
-    #css-outliner-svg-error-modal #css-outliner-svg-error-modal-message span {
-        @apply py-1.5 px-0.5 bg-gray-200 text-gray-900 text-2xl leading-4 font-semibold rounded-xl border border-gray-900;
-    }
+    /*#css-outliner-svg-error-modal-wrapper {*/
+    /*    @apply absolute top-2/4 left-2/4 w-100 h-100 -mt-48 -ml-48 rounded-xl shadow-error-modal-wrapper overflow-hidden bg-horizon text-horizon antialiased;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal {*/
+    /*    @apply absolute w-70 h-56 top-24 left-14 bg-white rounded-xl shadow-error-modal text-center overflow-hidden animate-show-modal;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal .hide {*/
+    /*    @apply animate-hide-modal;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal svg {*/
+    /*    @apply mt-6;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal #css-outliner-svg-error-modal-title {*/
+    /*    @apply block text-lg leading-6 font-normal mt-3.5 mb-1.5 mx-0;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal #css-outliner-svg-error-modal-message {*/
+    /*    @apply text-sm font-light leading-5 m-0 py-0 px-8 ;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal #css-outliner-svg-error-modal-button {*/
+    /*    @apply absolute h-10 bottom-0 left-0 right-0 bg-red-500 text-white leading-10 text-sm font-normal cursor-pointer transition duration-300 ease-in-out hover:bg-red-600;*/
+    /*}*/
+    /*#css-outliner-svg-error-modal #css-outliner-svg-error-modal-message span {*/
+    /*    @apply py-1.5 px-0.5 bg-gray-200 text-gray-900 text-2xl leading-4 font-semibold rounded-xl border border-gray-900;*/
+    /*}*/
 }
 
 @layer utilities {
@@ -69,5 +109,20 @@
     }
     .filter-grayscale {
         filter: grayscale(100%);
+    }
+    @media (min-height: 480px) {
+        #css-outliner-content {
+
+        }
+    }
+    @media (min-height: 640px) {
+        #css-outliner-content {
+
+        }
+    }
+    @media (min-height: 1024px) {
+        #css-outliner-content {
+
+        }
     }
 }

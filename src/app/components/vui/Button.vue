@@ -2,13 +2,11 @@
     <component
             :is="tag"
             role="button"
-            :id="`${id}`"
             class="relative transition"
             :class="[
                 className,
                 color ? color : variants[variant],
                 icon ? 'p-2' : 'py-2 px-4',
-                circle ? 'rounded-full' : 'rounded-lg',
                 { 'opacity-70': disabled, 'pointer-events-none': disabled },
             ]"
             v-bind="{ disabled: disabled, ...$attrs }"
@@ -27,17 +25,12 @@ import Spinner from "./Spinner.vue";
 export default {
     components: { Spinner },
     props: {
-        id: {
-            type: String,
-            default: '#'
-        },
         className: {
             type: String,
             default: ''
         },
         icon: Boolean,
         disabled: Boolean,
-        circle: Boolean,
         loading: Boolean,
         color: {
             type: String,

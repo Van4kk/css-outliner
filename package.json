@@ -50,5 +50,8 @@
         "css outliner",
         "css outline"
     ],
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "@adamdehaven/vue-custom-tooltip": "^2.6.0"
+    }
 }

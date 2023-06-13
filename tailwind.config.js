@@ -3,7 +3,7 @@ module.exports = {
         "./src/index.html",
         "./src/**/*.{vue,js,ts,jsx,tsx}",
     ],
-    // darkMode: true,
+    darkMode: 'class',
     mode: 'jit',
     theme: {
         fontSize: {
@@ -56,6 +56,9 @@ module.exports = {
             80: '320px',
             96: '384px',
         },
+        borderRadius: {
+            DEFAULT: '0.75rem',
+        },
         extend: {
             fontFamily: {
                 'default': ['Roboto', 'sans-serif !important'],
@@ -80,13 +83,15 @@ module.exports = {
               'full': 9999,
             },
             width: {
-                '400': '400px',
-                '280': '280px',
+                '70': '280px',
+                '85': '340px',
+                '100': '400px',
                 '4/5': '80%',
             },
             height: {
-                '400': '400px',
-                '280': '280px',
+                '70': '280px',
+                '85': '340px',
+                '100': '400px',
                 '4/5': '80%',
             },
             maxHeight: {
@@ -99,11 +104,16 @@ module.exports = {
                 '1/10': '10%',
             },
             colors: {
-                blue: 'rgba(38, 77, 228, 1)',
-                white: 'rgba(255, 255, 255, 1)',
+                //this will be dark mode values than will switch values with light mode
+                primary: 'rgb(40, 241, 169, 1)',
+                'primary-horizon': 'rgba(40, 241, 169,.1)',
+                white: 'rgba(188, 201, 219, 1)',
+                'white-hover': 'rgba(255,255,255,.08)',
+                gray: 'rgba(188, 201, 219, 0.6)',
+                horizon: 'rgb(26, 28, 31, 1)',
+                'horizon-darker': 'rgb(22, 24, 27, 1)',
+                'horizon-hover': 'rgb(34, 36, 41, 1)',
                 black: 'rgba(0, 0, 0, 1)',
-                horizon: 'rgba(34, 36, 41, 1)', //background
-                icons: 'rgba(0, 0, 0, 1)',
 
                 //dark mode colors ↓
                 'blue-darkmode': 'rgba(41, 101, 241, 1)',

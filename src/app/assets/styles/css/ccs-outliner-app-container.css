@@ -19,8 +19,8 @@
     src: local("SourceCodePro-Regular.ttf");
 }
 #css-outliner {
+    position: fixed;
     z-index: 9999;
-    position: relative;
 }
 .hide-fixed [is-fixed] {
     visibility: hidden !important;

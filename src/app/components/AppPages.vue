@@ -1,69 +1,65 @@
 <template>
-    <div class="fixed z-full backdrop-blur-xl top-6" style="right: 1.5rem" ref="baseWindow">
-        <div class="max-h-for-popup min-h-for-popup w-80 bg-gray-900 rounded-xl flex flex-col h-full">
-            <!-- Top Buttons -->
-            <Header />
-            <!-- Content -->
-            <div id="css-outliner-content" class="my-2 py-2 flex-1 overflow-auto scroll">
-<!--                <keep-alive>-->
-<!--                    <component :active-element-id="state.activeElementId" :is="state.activeMenu"></component>-->
-<!--                </keep-alive>-->
+    <div id="css-outliner-in-root-container" style="right: 1.5rem" ref="appContainer">
+        <div id="css-outliner-wrapper">
+            <Header @moveExtension="moveAppContainer" @stopApp="changeActiveMenu" />
+            <div id="css-outliner-content">
+                <keep-alive>
+                    <component :active-element-id="pageCondition.activeElementId" :is="pageCondition.activePage"></component>
+                </keep-alive>
             </div>
-            <!-- Navigation Menu -->
-            <Navigation />
+            <Navigation @changeActiveMenu="changeActiveMenu" />
         </div>
     </div>
 </template>
 <script>
 import { onMounted, onUnmounted, shallowReactive, ref } from 'vue';
+import globalEvent from "./../utils/globalEvent.js"
 import Navigation from "./vui/sectinos/Navigation.vue";
 import Header from "./vui/sectinos/Header.vue";
 import Icon from "./vui/Icon.vue";
+import ElementProperties from "./pages/ElementProperties.vue";
+import PageAssets from "./pages/PageAssets.vue";
+import PageColorPalette from "./pages/PageColorPalette.vue";
+import Tools from "./pages/Tools.vue";
+import Settings from "./pages/Settings.vue";
 
 export default {
     name: 'AppPages',
-    components: {Icon, Navigation, Header },
+    components: { Icon, Navigation, Header, ElementProperties, PageAssets, PageColorPalette, Tools, Settings },
     setup() {
+        const appContainer = ref(null);
+        const moveAppContainer = (styles) => {
+            appContainer.value.style.setProperty('right', '');
+            appContainer.value.style.setProperty('left', '');
+            appContainer.value.style.cssText += styles;
+        };
 
-        const g = "dasdas";
+        const pageCondition = shallowReactive({
+            activeElementId: 0,
+            activePage: 'element-properties',
+        });
+
+        const changeActiveMenu = (menuId, elementId) => {
+            pageCondition.activePage = menuId;
+            pageCondition.activeElementId = elementId;
+        };
+
+        /**
+         * @source https://github.com/Kholid060/inspect-css
+         */
+        onMounted(() => {
+            globalEvent.init(() => {
+                pageCondition.activeElementId += 1;
+            });
+        });
+        onUnmounted(() => globalEvent.removeListeners());
 
         return {
-            g,
+            appContainer,
+            pageCondition,
+            moveAppContainer,
+            changeActiveMenu,
         };
     }
-    // components: {DefaultMenu, InitialMenu, Navigation, Icon},
-    // setup() {
-    //     const menuItems = [
-    //         {},
-    //         {},
-    //         {},
-    //         {},
-    //         {},
-    //     ]
-    //
-    //     const baseWindow = ref(null);
-    //
-    //     const state = shallowReactive({
-    //         activeElementId: 0,
-    //         activeMenu: 'edit-properties',
-    //     });
-    //     function moveElement(value) {
-    //         baseWindow.value.style.cssText = value;
-    //     }
-    //
-    //     onMounted(() => {
-    //         globalEvent.init(() => {
-    //             state.activeElementId += 1;
-    //         });
-    //     });
-    //     onUnmounted(() => globalEvent.removeListeners());
-    //
-    //     return {
-    //         state,
-    //         menuItems,
-    //         baseWindow,
-    //         moveElement,
-    //     };
-    // },
 };
 </script>
