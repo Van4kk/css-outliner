@@ -1,8 +1,8 @@
 import { createApp } from "vue";
 import App from './App.vue?shadow';
 import { addAppCss, isIdenticalExisting, setAttributes } from "./utils/helpers";
-import cssOutlinerContainerStyles from '!to-string-loader!css-loader!postcss-loader!./assets/styles/css/ccs-outliner-app-container.css';
-import cssOutlinerAppCssStyles from '!to-string-loader!css-loader!postcss-loader!./assets/styles/css/ccs-outliner.css';
+import cssOutlinerContainerStyles from '!to-string-loader!css-loader!postcss-loader!./assets/styles/css/ccs-outliner.css';
+import cssOutlinerAppCssStyles from '!to-string-loader!css-loader!postcss-loader!./assets/styles/css/ccs-outliner-app.css';
 
 /**
  *
