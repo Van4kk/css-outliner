@@ -24,7 +24,7 @@
 
     /* Header */
     #css-outliner-header {
-        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between -mt-4 rounded text-white transition duration-200;
+        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between -mt-3 rounded text-white transition duration-200;
     }
     #css-outliner-header-buttons {
         @apply bg-white-hover bg-opacity-5 hover:bg-primary-horizon border border-white-hover hover:border-primary rounded transition duration-200;
@@ -41,18 +41,28 @@
         @apply pt-2 pb-4 flex-1 inline-table items-center h-full overflow-auto transition duration-200;
     }
 
+    /* Content - Welcome Page */
     #css-outliner-welcome-wrapper {
-        @apply bg-primary flex flex-col h-full;
+        @apply flex flex-col h-full;
     }
     #css-outliner-welcome-content-wrapper {
-        @apply py-10 mt-1/2 text-center;
+        @apply py-10 mt-[50%] text-center;
     }
     #css-outliner-welcome-content-wrapper span {
-        @apply inline-block p-6 rounded-full mb-4 bg-gray-100 bg-opacity-5;
+        @apply inline-block p-6 rounded mb-4 bg-transparent bg-opacity-5;
     }
-    #css-outliner-welcome-content-wrapper p {
-        @apply ;
+    #css-outliner-welcome-content-wrapper span svg {
+        @apply w-32 h-32;
     }
+    #css-outliner-welcome-content-wrapper h1 {
+        @apply text-lg font-bold text-white;
+    }
+
+    /* Content - Element Proprietes Page */
+    /* Content - Page Assets Page */
+    /* Content - Page Colors Page */
+    /* Content - Development Tools Page */
+    /* Content - App Settings Page */
 
     /* Navigation */
     #css-outliner-navigation-menu {
@@ -111,18 +121,33 @@
         filter: grayscale(100%);
     }
     @media (min-height: 480px) {
-        #css-outliner-content {
-
+        #css-outliner-welcome-content-wrapper {
+            margin-bottom: 5%;
         }
     }
-    @media (min-height: 640px) {
-        #css-outliner-content {
-
+    @media (min-height: 550px) {
+        #css-outliner-welcome-content-wrapper {
+            margin-top: 15%;
+        }
+    }
+    @media (min-height: 700px) {
+        #css-outliner-welcome-content-wrapper {
+            margin-top: 20%;
+        }
+    }
+    @media (min-height: 800px) {
+        #css-outliner-welcome-content-wrapper {
+            margin-top: 50%;
         }
     }
     @media (min-height: 1024px) {
-        #css-outliner-content {
-
+        #css-outliner-welcome-content-wrapper {
+            margin-top: 60%;
+        }
+    }
+    @media (min-height: 1561px) {
+        #css-outliner-welcome-content-wrapper {
+            margin-top: 130%;
         }
     }
 }
