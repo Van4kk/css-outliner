@@ -42,29 +42,86 @@
 
 ## Features :art:
 <details>
-    <summary><h3>Key binding</h3></summary>
+    <summary><h3>Get CSS Properties from any element by just hovering or selecting it</h3></summary>
+    <img src="" width="" height="" alt="Hovering feature image" />
+</details>
+
+<details>
+    <summary><h3>Download website assets</h3></summary>
+    <img src="" width="" height="" alt="Download assets feature image" />
+</details>
+
+<details>
+    <summary><h3>Get the color palette of the website</h3></summary>
+    <img src="" width="" height="" alt="Color palette assets feature image" />
+</details>
+
+<details>
+    <summary><h3>Customizable settings</h3></summary>
     <ul>
+        <li>
+            <a href="#shortcuts"><h4>Keyboard Shortcuts</h4></a>
+            <p>Yes, you can add custom shortcuts! Actually change the existing ones. The extension provide some shortcuts by default, but you can customize them how you want.</p>
+        </li>
+        <li>
+            <a href="#active-instruments"><h4>Active instruments</h4></a>
+        </li>
+    </ul>
+</details>
+
+<details id="#shortcuts">
+    <summary><h3>Keyboard Shortcuts</h3></summary>
+    <ul>
+        <span>These are default shortcuts:</span>
         <li><code>Esc</code> to exit the app</li>
         <li><code>f</code> to freeze the window</li>
-        <li><code>c</code> copy css</li>
+        <li><code>s</code> stop/cancel work and back to the main page</li>
+        <li><code>o</code> copy css</li>
         <li><code>g</code> display outline</li>
-        <li><code>b</code>display background</li>
+        <li><code>b</code> display background</li>
         <li><code>Ctrl</code> + <code>←</code> or <code>→</code> to move the extensios</li>
     </ul>
 </details>
 
+<details id="#active-instruments">
+    <summary><h3>Active instruments on your list of pages without opening the extension every time</h3></summary>
+    <p>Coming soon..</p>
+</details>
+
+<details>
+    <summary><h3>Empty one</h3></summary>
+    <ul>
+        <li></li>
+    </ul>
+</details>
 <br>
 
 ## Download :open_file_folder:
-
+<details>
+    <summary>Here are the links where you can download and use the extension!</summary>
+    <ul>
+        <li><a href="">Chrome</a></li>
+        <li><a href="">Firefox</a></li>
+        <li><a href="">Opera</a></li>
+        <li><a href="">Safari</a></li>
+    </ul>
+</details>
 <br>
 
 ## Changelog :hammer_and_pick:
 <details>
-    <summary>Version 1.0.0 The Beginning :orthodox_cross:</summary>
-
-    1. 
-
+    <summary><h3>Version 1.0.0 The Beginning :orthodox_cross:</h3></summary>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ipsum sodales, dapibus libero id, commodo dui. Donec faucibus ultrices sollicitudin. Cras sapien metus, consequat ut ex at, tempor accumsan augue. Morbi at maximus mauris. Nam maximus iaculis quam at scelerisque. Donec turpis massa, tristique at urna non, pharetra iaculis mauris.
+        <ul>
+            <li>asdas</li>
+            <li>sdas</li>
+            <li>asdas</li>
+            <li>dsad</li>
+            <li>sadas</li>
+            <li>sadas</li>
+        </ul>
+    </p>
 </details>
 
 <br> 
