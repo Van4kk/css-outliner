@@ -139,13 +139,13 @@ from [4ebur.net – Best VPN Proxy](https://chrome.google.com/webstore/detail/4e
     • Chrome &nbsp; <img src="src/app/assets/images/chrome.png" width="25" height="25" alt="Chrome Logo"><br>
 </div>
 <div style="display: flex">
-    • Firefox &nbsp; <img src="src/app/assets/images/mozilla.png" width="25" height="25" alt="Chrome Logo"><br>
+    • Firefox &nbsp; <img src="src/app/assets/images/mozilla.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
 </div>
 <div style="display: flex">
-    • Edge &nbsp; <img src="src/app/assets/images/edge.png" width="25" height="25" alt="Chrome Logo"><br>
+    • Edge &nbsp; <img src="src/app/assets/images/edge.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
 </div>
 <div style="display: flex">
-    • Opera &nbsp; <img src="src/app/assets/images/opera.svg" width="25" height="25" alt="Chrome Logo"><br>
+    • Opera &nbsp; <img src="src/app/assets/images/opera.svg" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
 </div>
 
 <br> 
