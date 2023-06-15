@@ -1,5 +1,7 @@
 @import "outline.css";
 @import "background.css";
+/*@import "hovered-element.css";*/
+/*@import "selected-element.css";*/
 @font-face {
     font-family: "Roboto Medium";
     font-style: normal;
@@ -26,9 +28,9 @@
     visibility: hidden !important;
     opacity: 0 !important;
 }
-.hover-element {
-    outline: 1px solid #f56565 !important;
+[selected-element] * {
+    outline: 1px solid rgb(40, 241, 169, 1) !important
 }
-[selected-element] {
-    outline: 1px solid #4299e1 !important;
+.hovered-element body {
+    outline: 1px solid rgba(248, 113, 113, 0.85) !important
 }

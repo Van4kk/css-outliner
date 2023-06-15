@@ -37,10 +37,10 @@ function insertShadowRoot(shadowRoot) {
         content();
         css();
 
-        const activeElement = document.querySelector('[active-element]');
-        if (activeElement) activeElement.removeAttribute('active-element');
+        const activeElement = document.querySelector('[selected-element]');
+        if (activeElement) activeElement.removeAttribute('selected-element');
 
-        ['css-outliner-pause', 'css-outliner-display-grid', 'css-outliner-stop'].forEach((classes) => {
+        ['css-outliner-pause', 'css-outliner-display-grid', 'css-outliner-pause', 'hovered-element'].forEach((classes) => {
             document.body.classList.remove(classes);
         });
     };

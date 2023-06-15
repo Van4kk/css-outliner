@@ -58,6 +58,7 @@ module.exports = {
         },
         borderRadius: {
             DEFAULT: '0.75rem',
+            'md': '0.50rem'
         },
         extend: {
             fontFamily: {
@@ -96,10 +97,15 @@ module.exports = {
             },
             maxHeight: {
                 'for-popup': 'calc(100vh - 2rem)',
+                '100': '400px'
             },
             minHeight: {
                 'for-popup': 'calc(100vh - 6rem)',
+                '100': '400px'
             },
+            // left: {
+            //     '1/2': '50%'
+            // },
             margin: {
                 '1/10': '10%',
             },

@@ -4,10 +4,11 @@
 
 @layer base {
     main #app {
+        @apply text-base text-white scroll-smooth;
         font-family: 'Poppins', sans-serif !important;
-        font-size: 16px;
-        color: rgba(188, 201, 219, 1);
-        scroll-behavior: smooth;
+    }
+    kbd {
+        @apply px-2 py-1.5 text-xs font-semibold text-white bg-horizon-hover border border-white-hover rounded-md;
     }
 }
 
@@ -16,7 +17,7 @@
     /* App Container */
     #css-outliner-in-root-container {
         @apply fixed z-full backdrop-blur-lg top-6 rounded transition duration-200;
-        background: linear-gradient(161deg, rgb(47, 49, 54, 0.7) 13.65%, rgb(18, 20, 22, 0.7) 81.89%), rgb(255, 255, 255, 0.001)
+        background: linear-gradient(161deg, rgb(47, 49, 54, 0.7) 13.65%, rgb(18, 20, 22, 0.7) 81.89%), rgb(255, 255, 255, 0.001);
     }
     #css-outliner-wrapper {
         @apply max-h-for-popup min-h-for-popup w-85 p-4 flex flex-col h-full transition duration-200;
@@ -41,12 +42,58 @@
         @apply pt-2 pb-4 flex-1 inline-table items-center h-full overflow-auto transition duration-200;
     }
 
+    /* Content - Element Proprietes Cursor */
+    #css-outliner-element-details-hover-box {
+        @apply absolute bg-horizon w-70 max-h-100 inset-0 m-0 p-3 border-horizon-hover bottom-auto rounded shadow-2xl z-full;
+    }
+    #css-outliner-element-details {}
+    #css-outliner-element-selectors {
+        @apply line-clamp-2 font-bold text-base mb-1 [&>*:nth-child(1)]:text-red-500 [&>*:nth-child(2)]:text-primary [&>*:nth-child(3)]:text-white;
+    }
+    #css-outliner-element-font {
+        @apply text-ellipsis overflow-hidden mb-3;
+    }
+    #css-outliner-element-font > span {
+        @apply inline-block mr-1 text-lg font-bold first-letter:font-light first-letter:uppercase first-letter:text-lg;
+    }
+    .css-outliner-element-details-computed {
+        @apply px-10 py-8 bg-primary/20 rounded relative mb-2 text-sm;
+    }
+    .css-outliner-element-details-computed span:first-of-type {
+        @apply absolute left-0 top-0 ml-2 mt-1 text-sm;
+    }
+    .css-outliner-element-details-computed .horizontal-center {
+        @apply absolute left-1/2 -translate-x-1/2;
+    }
+    .css-outliner-element-details-computed .horizontal-center .top {
+        @apply top-[5px];
+    }
+    .css-outliner-element-details-computed .horizontal-center .bottom {
+        @apply bottom-[5px];
+    }
+    .css-outliner-element-details-computed .vertical-center {
+        @apply absolute top-1/2 -translate-x-1/2;
+    }
+    .css-outliner-element-details-computed .left {
+        @apply ml-3 left-[5px];
+    }
+    .css-outliner-element-details-computed .right {
+        @apply mr-3 right-[5px];
+    }
+    #css-outliner-element-details-size-properties {
+        @apply bg-primary/20 rounded text-center p-2;
+    }
+    #css-outliner-element-details-shortcut-tip {
+        @apply text-sm text-white mt-4 font-light;
+    }
+
+    /* Content - Element Proprietes Page */
     /* Content - Welcome Page */
     #css-outliner-welcome-wrapper {
         @apply flex flex-col h-full;
     }
     #css-outliner-welcome-content-wrapper {
-        @apply py-10 mt-[50%] text-center;
+        @apply py-10 mt-[5%] text-center;
     }
     #css-outliner-welcome-content-wrapper span {
         @apply inline-block p-6 rounded mb-4 bg-transparent bg-opacity-5;
@@ -55,10 +102,9 @@
         @apply w-32 h-32;
     }
     #css-outliner-welcome-content-wrapper h1 {
-        @apply text-lg font-bold text-white;
+        @apply mb-8 text-lg font-bold text-white;
     }
 
-    /* Content - Element Proprietes Page */
     /* Content - Page Assets Page */
     /* Content - Page Colors Page */
     /* Content - Development Tools Page */
@@ -120,34 +166,34 @@
     .filter-grayscale {
         filter: grayscale(100%);
     }
-    @media (min-height: 480px) {
-        #css-outliner-welcome-content-wrapper {
-            margin-bottom: 5%;
-        }
-    }
-    @media (min-height: 550px) {
-        #css-outliner-welcome-content-wrapper {
-            margin-top: 15%;
-        }
-    }
-    @media (min-height: 700px) {
-        #css-outliner-welcome-content-wrapper {
-            margin-top: 20%;
-        }
-    }
-    @media (min-height: 800px) {
-        #css-outliner-welcome-content-wrapper {
-            margin-top: 50%;
-        }
-    }
-    @media (min-height: 1024px) {
-        #css-outliner-welcome-content-wrapper {
-            margin-top: 60%;
-        }
-    }
-    @media (min-height: 1561px) {
-        #css-outliner-welcome-content-wrapper {
-            margin-top: 130%;
-        }
-    }
+    /*@media (max-height: 480px) {*/
+    /*    #css-outliner-welcome-content-wrapper {*/
+    /*        margin-bottom: 5%;*/
+    /*    }*/
+    /*}*/
+    /*@media (min-height: 550px) {*/
+    /*    #css-outliner-welcome-content-wrapper {*/
+    /*        margin-top: 15%;*/
+    /*    }*/
+    /*}*/
+    /*@media (min-height: 700px) {*/
+    /*    #css-outliner-welcome-content-wrapper {*/
+    /*        margin-top: 20%;*/
+    /*    }*/
+    /*}*/
+    /*@media (min-height: 800px) {*/
+    /*    #css-outliner-welcome-content-wrapper {*/
+    /*        margin-top: 50%;*/
+    /*    }*/
+    /*}*/
+    /*@media (min-height: 1024px) {*/
+    /*    #css-outliner-welcome-content-wrapper {*/
+    /*        margin-top: 60%;*/
+    /*    }*/
+    /*}*/
+    /*@media (min-height: 1561px) {*/
+    /*    #css-outliner-welcome-content-wrapper {*/
+    /*        margin-top: 130%;*/
+    /*    }*/
+    /*}*/
 }

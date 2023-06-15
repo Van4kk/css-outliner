@@ -1,4 +1,4 @@
-import {filterClasses, generateBoxModels, removePx} from "../utils/helpers";
+import { filterClasses, generateBoxModels, removePx } from "./helpers";
 
 export default class HtmlElement {
     constructor(reference) {
