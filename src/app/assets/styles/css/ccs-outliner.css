@@ -28,9 +28,9 @@
     visibility: hidden !important;
     opacity: 0 !important;
 }
-[selected-element] * {
+[selected-element] {
     outline: 1px solid rgb(40, 241, 169, 1) !important
 }
-.hovered-element body {
+.hovered-element {
     outline: 1px solid rgba(248, 113, 113, 0.85) !important
 }
