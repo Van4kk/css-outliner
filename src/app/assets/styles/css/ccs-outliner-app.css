@@ -3,9 +3,11 @@
 @import "tailwindcss/utilities";
 
 @layer base {
+    * {
+        @apply transition-200;
+    }
     main #app {
-        @apply text-base text-white scroll-smooth;
-        font-family: 'Poppins', sans-serif !important;
+        @apply text-base text-white font-default scroll-smooth;
     }
     kbd {
         @apply px-2 py-1.5 text-xs font-semibold text-white bg-horizon-hover border border-white-hover rounded-md;
@@ -16,35 +18,38 @@
     /* ========================== UI ========================== */
     /* App Container */
     #css-outliner-in-root-container {
-        @apply fixed z-full backdrop-blur-lg top-6 rounded transition duration-200;
+        @apply fixed z-full backdrop-blur-lg top-6 rounded;
         background: linear-gradient(161deg, rgb(47, 49, 54, 0.7) 13.65%, rgb(18, 20, 22, 0.7) 81.89%), rgb(255, 255, 255, 0.001);
     }
     #css-outliner-wrapper {
-        @apply max-h-for-popup min-h-for-popup w-85 p-4 flex flex-col h-full transition duration-200;
+        @apply max-h-for-popup min-h-for-popup w-85 p-4 flex flex-col h-full;
     }
 
     /* Header */
     #css-outliner-header {
-        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between -mt-3 rounded text-white transition duration-200;
+        @apply bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center justify-between -mt-3 rounded text-white;
     }
     #css-outliner-header-buttons {
-        @apply bg-white-hover bg-opacity-5 hover:bg-primary-horizon border border-white-hover hover:border-primary rounded transition duration-200;
+        @apply bg-white-hover bg-opacity-5 hover:bg-primary-horizon border border-white-hover hover:border-primary rounded;
     }
     #css-outliner-header-buttons button {
-        @apply hover:text-primary transition duration-200;
+        @apply hover:text-primary;
     }
     #css-outliner-header-buttons button svg {
-        @apply hover:fill-primary transition duration-200;
+        @apply hover:fill-primary;
     }
 
     /* Content */
     #css-outliner-content {
-        @apply pt-2 pb-4 flex-1 inline-table items-center h-full overflow-auto transition duration-200;
+        @apply pt-2 pb-4 my-2 py-2 flex-1 overflow-auto scrollbar items-center;
     }
 
     /* Content - Element Proprietes Cursor */
     #css-outliner-element-details-hover-box {
-        @apply absolute bg-horizon w-70 max-h-100 inset-0 m-0 p-3 border-horizon-hover bottom-auto rounded shadow-2xl z-full;
+        @apply absolute bg-horizon w-70 max-h-100 inset-0 m-0 p-3 border-horizon-hover bottom-auto rounded shadow-2xl z-full do-not-apply-transition;
+    }
+    #css-outliner-element-details-hover-box > * {
+        @apply do-not-apply-transition;
     }
     #css-outliner-element-details {}
     #css-outliner-element-selectors {
@@ -87,23 +92,54 @@
         @apply text-sm text-white mt-4 font-light;
     }
 
-    /* Content - Element Proprietes Page */
     /* Content - Welcome Page */
     #css-outliner-welcome-wrapper {
         @apply flex flex-col h-full;
     }
     #css-outliner-welcome-content-wrapper {
-        @apply py-10 mt-[5%] text-center;
+        @apply py-10 text-center;
     }
-    #css-outliner-welcome-content-wrapper span {
+    #css-outliner-welcome-content-wrapper > span {
         @apply inline-block p-6 rounded mb-4 bg-transparent bg-opacity-5;
     }
-    #css-outliner-welcome-content-wrapper span svg {
+    #css-outliner-welcome-content-wrapper > span > svg {
         @apply w-32 h-32;
     }
-    #css-outliner-welcome-content-wrapper h1 {
+    #css-outliner-welcome-content-wrapper > h1 {
         @apply mb-8 text-lg font-bold text-white;
     }
+    #css-outliner-welcome-shortcuts-list {
+        @apply relative inline-block w-4/5;
+    }
+    #css-outliner-welcome-shortcuts-dropdown {
+        @apply cursor-pointer flex items-center text-sm text-white p-3 bg-white-hover border border-white-hover rounded;
+    }
+    #css-outliner-welcome-shortcuts-dropdown-content {
+        @apply mt-3 p-3;
+    }
+    #css-outliner-welcome-shortcuts-dropdown-content > .css-outliner-welcome-shortcuts-dropdown-row {
+        @apply py-3 hover:border-b hover:border-b-white-hover;
+    }
+    .css-outliner-welcome-shortcuts-dropdown-item-text {
+        @apply leading-none pt-1 -mb-1/4 w-full;
+    }
+    .css-outliner-welcome-shortcuts-dropdown-item-text:nth-child(4) {
+        @apply -mt-19/50;
+    }
+    .css-outliner-welcome-shortcuts-dropdown-item-text > span {
+        @apply text-white font-bold text-base;
+    }
+    .css-outliner-welcome-shortcuts-dropdown-item-text > p {
+        @apply text-white/80 pt-1 text-justify invisible opacity-0 -translate-y-full;
+    }
+    .css-outliner-welcome-shortcuts-dropdown-row:hover > .css-outliner-welcome-shortcuts-dropdown-item-text {
+        @apply mb-0;
+    }
+    .css-outliner-welcome-shortcuts-dropdown-row:hover > .css-outliner-welcome-shortcuts-dropdown-item-text > p {
+        @apply translate-y-0 duration-500 opacity-100 visible;
+    }
+
+    /* Content - Element Proprietes Page */
 
     /* Content - Page Assets Page */
     /* Content - Page Colors Page */
@@ -115,7 +151,7 @@
         @apply bg-horizon bg-opacity-5 flex-shrink-0 w-full h-16 flex items-center border border-horizon-hover justify-between px-4 rounded text-white;
     }
     #css-outliner-navigation-menu button {
-        @apply p-2 bg-transparent border border-transparent rounded hover:border-primary hover:text-primary hover:bg-white-hover transition duration-200;
+        @apply p-2 bg-transparent border border-transparent rounded hover:border-primary hover:text-primary hover:bg-white-hover;
     }
 
 
@@ -160,40 +196,25 @@
 }
 
 @layer utilities {
+    .do-not-apply-transition {
+        @apply transition-none;
+    }
+    .transition-200 {
+        @apply transition duration-200;
+    }
     .filter-none {
         filter: none;
     }
     .filter-grayscale {
         filter: grayscale(100%);
     }
-    /*@media (max-height: 480px) {*/
-    /*    #css-outliner-welcome-content-wrapper {*/
-    /*        margin-bottom: 5%;*/
-    /*    }*/
-    /*}*/
-    /*@media (min-height: 550px) {*/
-    /*    #css-outliner-welcome-content-wrapper {*/
-    /*        margin-top: 15%;*/
-    /*    }*/
-    /*}*/
-    /*@media (min-height: 700px) {*/
-    /*    #css-outliner-welcome-content-wrapper {*/
-    /*        margin-top: 20%;*/
-    /*    }*/
-    /*}*/
-    /*@media (min-height: 800px) {*/
-    /*    #css-outliner-welcome-content-wrapper {*/
-    /*        margin-top: 50%;*/
-    /*    }*/
-    /*}*/
-    /*@media (min-height: 1024px) {*/
-    /*    #css-outliner-welcome-content-wrapper {*/
-    /*        margin-top: 60%;*/
-    /*    }*/
-    /*}*/
-    /*@media (min-height: 1561px) {*/
-    /*    #css-outliner-welcome-content-wrapper {*/
-    /*        margin-top: 130%;*/
-    /*    }*/
-    /*}*/
+    .scrollbar::-webkit-scrollbar {
+        @apply w-[4px] h-[4px] transition duration-200;
+    }
+    .scrollbar::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+    .scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-primary-horizon/20 rounded transition duration-200;
+    }
 }

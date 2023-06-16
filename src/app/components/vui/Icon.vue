@@ -54,7 +54,7 @@ export default {
         size: {
             type: Number,
             default: 24,
-            validator: (size) => [18, 20, 24].includes(size)
+            validator: (size) => [18, 20, 22, 24].includes(size)
         },
         fill: {
             type: String,

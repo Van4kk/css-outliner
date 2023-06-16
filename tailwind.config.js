@@ -108,6 +108,9 @@ module.exports = {
             // },
             margin: {
                 '1/10': '10%',
+                '1/4': '25%',
+                '9/25': '36%',
+                '19/50': '38%',
             },
             colors: {
                 //this will be dark mode values than will switch values with light mode
