@@ -16,7 +16,7 @@
 </template>
 <script>
 import { ref, shallowReactive } from "vue";
-import { navigation } from "../../../utils/menus";
+import { navigation } from "../../../utils/data";
 import Icon from "../Icon.vue";
 
 export default {

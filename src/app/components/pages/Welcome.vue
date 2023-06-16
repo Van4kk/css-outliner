@@ -31,7 +31,7 @@
 </template>
 <script>
 import Icon from "../vui/Icon.vue";
-import { shortcutsOptions } from "../../utils/menus";
+import { shortcutsOptions } from "../../utils/data";
 import { ref } from "vue";
 import KBD from "../vui/Keyboard.vue";
 
