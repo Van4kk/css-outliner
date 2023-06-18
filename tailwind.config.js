@@ -88,6 +88,8 @@ module.exports = {
                 '85': '340px',
                 '100': '400px',
                 '4/5': '80%',
+                'tabs': '616px',
+                'tab': '308px',
             },
             height: {
                 '70': '280px',
@@ -132,6 +134,9 @@ module.exports = {
                 'icons-darkmode': 'rgba(188, 201, 219, 1)',
 
                 'spinner': '#fff transparent transparent transparent',
+            },
+            translate: {
+                'switch-pages': 'calc(100% + 16px)',
             },
             keyframes: {
                 'scale-to-z': {

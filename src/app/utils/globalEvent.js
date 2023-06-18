@@ -38,10 +38,10 @@ export default class GlobalEvent {
 
         if (isMatchExtensionElement || isPaused) return;
 
-        const activeElement = document.querySelector('[active-element]');
-        activeElement?.removeAttribute('active-element');
+        const activeElement = document.querySelector('[selected-element]');
+        activeElement?.removeAttribute('selected-element');
 
-        target.setAttribute('active-element', '');
+        target.setAttribute('selected-element', '');
         target.classList.remove('hover-element');
 
         this.callback();

@@ -5,8 +5,8 @@
                 :title="nav.name"
                 @click="switchActivePage(nav.id, nav.id)"
                 :class="{
-                    'bg-opacity-5 text-primary': nav.id === activePage,
-                    'hover:text-white': nav.id !== activePage
+                   'bg-opacity-5 text-primary': nav.id === activePage,
+                   'hover:text-white': nav.id !== activePage
                 }"
                 class="transition-colors"
         >

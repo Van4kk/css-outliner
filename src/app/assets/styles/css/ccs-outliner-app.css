@@ -4,7 +4,7 @@
 
 @layer base {
     * {
-        @apply transition-200;
+        @apply transition-200 scroll-smooth overflow-x-hidden;
     }
     main #app {
         @apply text-base text-white font-default scroll-smooth;
@@ -41,7 +41,7 @@
 
     /* Content */
     #css-outliner-content {
-        @apply pt-2 pb-4 my-2 py-2 flex-1 overflow-auto scrollbar items-center;
+        @apply pt-1.5 pb-4 py-2 -mx-4 flex-1 overflow-auto scrollbar items-center;
     }
 
     /* Content - Element Proprietes Cursor */
@@ -140,6 +140,45 @@
     }
 
     /* Content - Element Proprietes Page */
+    #css-outliner-element-properties-page-tabs-nav {
+        @apply flex relative mb-2 bg-white-hover rounded border border-white-hover cursor-pointer;
+    }
+    #css-outliner-element-properties-page-tabs-nav > * {
+        @apply z-20;
+    }
+    #css-outliner-element-properties-page-tabs-nav > button {
+        @apply flex w-1/2 text-white-hover items-center justify-center p-2 cursor-pointer;
+    }
+    #css-outliner-element-properties-page-tabs-nav > .css-outliner-element-properties-tabs-glider {
+        @apply absolute translate-x-full flex z-10 rounded bg-primary/60;
+    }
+    #css-outliner-element-properties-page-tabs {
+        @apply flex w-tabs;
+    }
+    #css-outliner-element-properties-page-tabs > div {
+        @apply -translate-x-switch-pages;
+    }
+    #css-outliner-element-properties-page-tabs > .css-outliner-element-properties-active-tab {
+        @apply translate-x-0;
+    }
+    #css-outliner-element-properties-page-tabs > .css-outliner-element-properties-active-tab + div {
+        @apply translate-x-switch-pages;
+    }
+
+    /* Content - Element Proprietes Tab */
+    #css-outliner-element-properties-tab {
+        @apply w-tab;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Content - Element Attributes Tab */
+    #css-outliner-element-attributes-tab {
+        @apply before:invisible w-tab;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 
     /* Content - Page Assets Page */
     /* Content - Page Colors Page */
@@ -216,5 +255,8 @@
     }
     .scrollbar::-webkit-scrollbar-thumb {
         @apply bg-primary-horizon/20 rounded transition duration-200;
+    }
+    .glider {
+        @apply absolute flex h-full w-1/2 z-10 bg-primary-horizon rounded transition-200;
     }
 }

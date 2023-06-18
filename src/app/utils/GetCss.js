@@ -1,6 +1,6 @@
-import {extractCSS, filterRules, getNumber, removeDuplicateCSS} from "../utils/helpers";
+import { extractCSS, filterRules, getNumber, removeDuplicateCSS } from "./helpers";
 
-class GetAppliedCSS {
+export default class GetCSS {
     constructor(el) {
         // el.matches = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector || el.oMatchesSelector;
         this.element = el;
