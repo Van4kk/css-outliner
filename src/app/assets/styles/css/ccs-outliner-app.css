@@ -139,7 +139,7 @@
         @apply translate-y-0 duration-500 opacity-100 visible;
     }
 
-    /* Content - Element Proprietes Page */
+    /* Content - Element Proprieties Page */
     #css-outliner-element-properties-page-tabs-nav {
         @apply flex relative mb-2 bg-white-hover rounded border border-white-hover cursor-pointer;
     }
@@ -155,29 +155,26 @@
     #css-outliner-element-properties-page-tabs {
         @apply flex w-tabs;
     }
-    #css-outliner-element-properties-page-tabs > div {
-        @apply -translate-x-switch-pages;
-    }
-    #css-outliner-element-properties-page-tabs > .css-outliner-element-properties-active-tab {
-        @apply translate-x-0;
-    }
-    #css-outliner-element-properties-page-tabs > .css-outliner-element-properties-active-tab + div {
-        @apply translate-x-switch-pages;
-    }
+    /*#css-outliner-element-properties-page-tabs > div {*/
+    /*    @apply translate-x-0;*/
+    /*}*/
+    /*#css-outliner-element-properties-page-tabs > .css-outliner-element-properties-active-tab + div {*/
+    /*    @apply translate-x-switch-pages;*/
+    /*}*/
 
-    /* Content - Element Proprietes Tab */
+    /* Content - Element Proprieties Tab */
     #css-outliner-element-properties-tab {
-        @apply w-tab;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        @apply w-tab flex-col -translate-x-switch-pages;
+    }
+    #css-outliner-element-properties-tab.css-outliner-element-properties-active-tab {
+        @apply will-change-transform translate-x-0;
     }
     /* Content - Element Attributes Tab */
     #css-outliner-element-attributes-tab {
-        @apply before:invisible w-tab;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        @apply before:invisible w-tab flex-col translate-x-switch-pages;
+    }
+    #css-outliner-element-attributes-tab.css-outliner-element-properties-active-tab {
+        @apply will-change-transform -translate-x-switch-pages;
     }
 
     /* Content - Page Assets Page */
