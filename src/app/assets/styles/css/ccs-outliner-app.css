@@ -6,7 +6,7 @@
     * {
         @apply transition-200 scroll-smooth overflow-x-hidden;
     }
-    main #app {
+    main#app {
         @apply text-base text-white font-default scroll-smooth;
     }
     kbd {
@@ -44,7 +44,7 @@
         @apply pt-1.5 pb-4 py-2 -mx-4 flex-1 overflow-auto scrollbar items-center;
     }
 
-    /* Content - Element Proprietes Cursor */
+    /* Content - Element Proprieties Cursor */
     #css-outliner-element-details-hover-box {
         @apply absolute bg-horizon w-70 max-h-100 inset-0 m-0 p-3 border-horizon-hover bottom-auto rounded shadow-2xl z-full do-not-apply-transition;
     }
@@ -130,13 +130,13 @@
         @apply text-white font-bold text-base;
     }
     .css-outliner-welcome-shortcuts-dropdown-item-text > p {
-        @apply text-white/80 pt-1 text-justify invisible opacity-0 -translate-y-full;
+        @apply text-white/80 pt-1 text-justify invisible opacity-0 overflow-x-hidden overflow-y-hidden -translate-y-full;
     }
     .css-outliner-welcome-shortcuts-dropdown-row:hover > .css-outliner-welcome-shortcuts-dropdown-item-text {
         @apply mb-0;
     }
     .css-outliner-welcome-shortcuts-dropdown-row:hover > .css-outliner-welcome-shortcuts-dropdown-item-text > p {
-        @apply translate-y-0 duration-500 opacity-100 visible;
+        @apply translate-y-0 duration-500 opacity-100 visible overflow-x-hidden overflow-y-hidden;
     }
 
     /* Content - Element Proprieties Page */
@@ -155,12 +155,6 @@
     #css-outliner-element-properties-page-tabs {
         @apply flex w-tabs;
     }
-    /*#css-outliner-element-properties-page-tabs > div {*/
-    /*    @apply translate-x-0;*/
-    /*}*/
-    /*#css-outliner-element-properties-page-tabs > .css-outliner-element-properties-active-tab + div {*/
-    /*    @apply translate-x-switch-pages;*/
-    /*}*/
 
     /* Content - Element Proprieties Tab */
     #css-outliner-element-properties-tab {
@@ -169,6 +163,7 @@
     #css-outliner-element-properties-tab.css-outliner-element-properties-active-tab {
         @apply will-change-transform translate-x-0;
     }
+
     /* Content - Element Attributes Tab */
     #css-outliner-element-attributes-tab {
         @apply before:invisible w-tab flex-col translate-x-switch-pages;

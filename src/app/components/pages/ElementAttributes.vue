@@ -1,16 +1,14 @@
 <template>
-    <page-wrapper>
-        <div class="">
-            <h1 >{{message}}</h1>
-        </div>
-    </page-wrapper>
+    <div class="w-[308px]">
+        <h1 >{{message}}</h1>
+    </div>
 </template>
 <script>
-import PageWrapper from "../vui/sectinos/PageWrapper.vue";
+
 
 export default {
     name: 'ElementAttributes',
-    components: {PageWrapper},
+    components: {},
     props: {
         activeElementId: {
             type: Number,
