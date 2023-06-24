@@ -14,7 +14,7 @@
                 </div>
             </element-computed>
         </element-computed>
-        <p id="#css-outliner-element-details-shortcut-tip" v-show="showInfo">
+        <p id="css-outliner-element-details-shortcut-tip" v-show="showInfo">
             Click or press <KBD name="Ctrl" /> + <KBD name="Space" /> to edit element
         </p>
     </div>
