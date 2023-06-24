@@ -9,6 +9,7 @@ module.exports = {
         fontSize: {
             xs: '12px',
             sm: '14px',
+            'sm.5': '15px',
             base: '16px',
             lg: '18px',
             xl: '20px',
@@ -62,8 +63,8 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                'default': ['Roboto', 'sans-serif !important'],
-                'bolder': ['Roboto Medium', 'sans-serif !important'],
+                'default': ['Roboto', 'sans-serif'],
+                'bolder': ['Roboto', 'sans-serif'],
                 'code': ['Code', 'monospace'],
             },
             boxShadow: {
@@ -87,6 +88,7 @@ module.exports = {
                 '70': '280px',
                 '85': '340px',
                 '100': '400px',
+                'glider': '153px',
                 '4/5': '80%',
                 'tabs': '616px',
                 'tab': '308px',
@@ -94,6 +96,7 @@ module.exports = {
             height: {
                 '70': '280px',
                 '85': '340px',
+                'glider': '39px',
                 '100': '400px',
                 '4/5': '80%',
             },

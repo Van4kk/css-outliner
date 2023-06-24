@@ -56,10 +56,10 @@
         @apply line-clamp-2 font-bold text-base mb-1 [&>*:nth-child(1)]:text-red-500 [&>*:nth-child(2)]:text-primary [&>*:nth-child(3)]:text-white;
     }
     #css-outliner-element-font {
-        @apply text-ellipsis overflow-hidden mb-3;
+        @apply text-ellipsis overflow-hidden mb-3 flex items-baseline;
     }
     #css-outliner-element-font > span {
-        @apply inline-block mr-1 text-lg font-bold first-letter:font-light first-letter:uppercase first-letter:text-lg;
+        @apply inline-block mr-3 text-lg font-bold first-letter:font-light first-letter:uppercase first-letter:text-lg;
     }
     .css-outliner-element-details-computed {
         @apply px-10 py-8 bg-primary/20 rounded relative mb-2 text-sm;
@@ -89,7 +89,7 @@
         @apply bg-primary/20 rounded text-center p-2;
     }
     #css-outliner-element-details-shortcut-tip {
-        @apply text-sm text-white mt-4 font-light;
+        @apply text-sm text-white pt-2 font-light;
     }
 
     /* Content - Welcome Page */
@@ -141,16 +141,13 @@
 
     /* Content - Element Proprieties Page */
     #css-outliner-element-properties-page-tabs-nav {
-        @apply flex relative mb-2 bg-white-hover rounded border border-white-hover cursor-pointer;
-    }
-    #css-outliner-element-properties-page-tabs-nav > * {
-        @apply z-20;
+        @apply flex relative mb-2 text-sm.5 bg-white-hover rounded border border-white-hover cursor-pointer;
     }
     #css-outliner-element-properties-page-tabs-nav > button {
-        @apply flex w-1/2 text-white-hover items-center justify-center p-2 cursor-pointer;
+        @apply flex w-1/2 items-center justify-center p-2 cursor-pointer;
     }
     #css-outliner-element-properties-page-tabs-nav > .css-outliner-element-properties-tabs-glider {
-        @apply absolute translate-x-full flex z-10 rounded bg-primary/60;
+        @apply absolute w-glider h-glider flex z-10 rounded bg-primary/20;
     }
     #css-outliner-element-properties-page-tabs {
         @apply flex w-tabs;
@@ -169,7 +166,7 @@
         @apply before:invisible w-tab flex-col translate-x-switch-pages;
     }
     #css-outliner-element-attributes-tab.css-outliner-element-properties-active-tab {
-        @apply will-change-transform -translate-x-switch-pages;
+        @apply ml-4 will-change-transform -translate-x-switch-pages;
     }
 
     /* Content - Page Assets Page */
