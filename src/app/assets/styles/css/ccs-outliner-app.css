@@ -12,6 +12,12 @@
     kbd {
         @apply px-2 py-1.5 text-xs font-semibold text-white bg-horizon-hover border border-white-hover rounded-md;
     }
+    input:focus,
+    button:focus,
+    textarea:focus,
+    select:focus {
+        outline: none;
+    }
 }
 
 @layer components {
@@ -147,7 +153,7 @@
         @apply flex w-1/2 items-center justify-center p-2 cursor-pointer;
     }
     #css-outliner-element-properties-page-tabs-nav > .css-outliner-element-properties-tabs-glider {
-        @apply absolute w-glider h-glider flex z-10 rounded bg-primary/20;
+        @apply absolute border border-primary w-glider h-glider flex z-10 rounded bg-primary/20;
     }
     #css-outliner-element-properties-page-tabs {
         @apply flex w-tabs;
@@ -166,7 +172,7 @@
         @apply before:invisible w-tab flex-col translate-x-switch-pages;
     }
     #css-outliner-element-attributes-tab.css-outliner-element-properties-active-tab {
-        @apply ml-4 will-change-transform -translate-x-switch-pages;
+        @apply ml-4 -mr-4 border-primary will-change-transform -translate-x-switch-pages;
     }
 
     /* Content - Page Assets Page */
@@ -237,13 +243,21 @@
         filter: grayscale(100%);
     }
     .scrollbar::-webkit-scrollbar {
-        @apply w-[4px] h-[4px] transition duration-200;
+        @apply w-1 h-1 transition duration-200;
     }
     .scrollbar::-webkit-scrollbar-track {
         @apply bg-transparent;
     }
     .scrollbar::-webkit-scrollbar-thumb {
         @apply bg-primary-horizon/20 rounded transition duration-200;
+    }
+    .scrollbar::-webkit-scrollbar-thumb:vertical:hover,
+    .scrollbar::-webkit-scrollbar-thumb:horizontal:hover {
+        @apply bg-primary/60;
+    }
+    .scrollbar::-webkit-scrollbar-thumb:vertical:active,
+    .scrollbar::-webkit-scrollbar-thumb:horizontal:active {
+        @apply bg-primary/60;
     }
     .glider {
         @apply absolute flex h-full w-1/2 z-10 bg-primary-horizon rounded transition-200;
