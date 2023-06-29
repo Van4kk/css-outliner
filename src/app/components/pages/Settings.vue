@@ -1,12 +1,26 @@
 <template>
     <page-wrapper>
         <h1>{{hey}}</h1>
+        {{version()}}
     </page-wrapper>
 </template>
-<script setup>
+<script>
 import PageWrapper from "../vui/sectinos/PageWrapper.vue";
+import version from "../../utils/version";
 
-const hey = 'Hello From App Settings';
+export default {
+    name: 'Settings',
+    methods: {version},
+    components: { PageWrapper },
+    props: {},
+    setup(props) {
+        const hey = 'Hello From App Settings';
+
+        return {
+            hey
+        }
+    }
+};
 //docs
 //key shortcuts
 //save settings
