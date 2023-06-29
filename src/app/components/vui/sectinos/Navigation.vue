@@ -25,7 +25,7 @@ export default {
     emits: ['changeActiveMenu'],
     setup(props, { emit }) {
         const navigationData = shallowReactive(navigation)
-        const activePage = ref('');
+        const activePage = ref('element-properties');
 
         const switchActivePage = (pageId, elementId) => {
             activePage.value = pageId;
