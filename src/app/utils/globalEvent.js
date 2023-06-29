@@ -1,5 +1,5 @@
 /**
- * @source https://github.com/Kholid060/inspect-css/blob/master/src/utils/globalEvent.js
+ * @author https://github.com/Kholid060/inspect-css/blob/master/src/utils/globalEvent.js
  */
 export default class GlobalEvent {
     static init(callback) {
@@ -34,7 +34,7 @@ export default class GlobalEvent {
 
     static eventHandler(target) {
         const isPaused = document.body.classList.contains('#css-outliner-display-pause');
-        const isMatchExtensionElement = target.matches('#css-outliner,[active-element],html');
+        const isMatchExtensionElement = target.matches('#css-outliner,[selected-element],html');
 
         if (isMatchExtensionElement || isPaused) return;
 
@@ -42,7 +42,7 @@ export default class GlobalEvent {
         activeElement?.removeAttribute('selected-element');
 
         target.setAttribute('selected-element', '');
-        target.classList.remove('hover-element');
+        target.classList.remove('hovered-element');
 
         this.callback();
     }

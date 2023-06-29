@@ -1,5 +1,8 @@
 import { filterClasses, generateBoxModels, removePx } from "./helpers";
 
+/**
+ * @author https://github.com/Kholid060/inspect-css/blob/master/src/utils/getElementProperties.js
+ */
 export default class HtmlElement {
     constructor(reference) {
         this.reference = reference;

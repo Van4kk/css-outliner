@@ -7,27 +7,6 @@ export const generateGetBoundingClientRect = (x = 0, y = 0) => () => ({
     left: x,
 });
 
-export function copyToClipboard(text = '') {
-    const textarea = document.createElement('textarea');
-
-    textarea.value = text;
-    textarea.style.top = 0;
-    textarea.style.left = 0;
-    textarea.style.opacity = 0;
-    textarea.style.position = 'fixed';
-
-    document.body.appendChild(textarea);
-
-    textarea.focus();
-    textarea.select();
-
-    document.execCommand('Copy');
-
-    textarea.remove();
-
-    return true;
-}
-
 export function generateBoxModels(name) {
     const directions = ['top', 'right', 'bottom', 'left'];
 
@@ -49,6 +28,11 @@ export function filterClasses(classes) {
     return filtered.length !== 0 ? `.${filtered.join('.')}` : '';
 }
 
+/**
+ * @author https://github.com/Kholid060/inspect-css/blob/master/src/utils/getAppliedCSS.js
+ * @param rules
+ * @returns {{hover: string, css: string}}
+ */
 export function extractCSS(rules) {
     const result = { css: '', hover: '' };
 
@@ -66,6 +50,11 @@ export function extractCSS(rules) {
     return result;
 }
 
+/**
+ * @author https://github.com/Kholid060/inspect-css/blob/master
+ * @param css
+ * @returns {*}
+ */
 export function removeDuplicateCSS(css) {
     const seen = new Set();
     const cssArray = css.split(';');
@@ -100,7 +89,7 @@ export function setAttributes(elem, obj) {
 }
 
 /**
- * @source https://github.com/JoshK2/vue-spinners-css/blob/master/src/helpers/calcPropertyValue.js
+ * @author https://github.com/JoshK2/vue-spinners-css/blob/master/src/helpers/calcPropertyValue.js
  */
 export function calculatePropertyValue(propName, originalValue, modificator) {
     const computedStyle = {}
@@ -113,7 +102,7 @@ export function calculatePropertyValue(propName, originalValue, modificator) {
 }
 
 /**
- * @source https://github.com/JoshK2/vue-spinners-css/blob/master/src/helpers/validateDuration.js
+ * @author https://github.com/JoshK2/vue-spinners-css/blob/master/src/helpers/validateDuration.js
  */
 export function validateDuration(duration) {
     const re = new RegExp(/^\d*\.?\d+(s|ms)$/)

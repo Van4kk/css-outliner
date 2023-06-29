@@ -1,8 +1,10 @@
 import { extractCSS, filterRules, getNumber, removeDuplicateCSS } from "./helpers";
 
+/**
+ * @author https://github.com/Kholid060/inspect-css/blob/master/src/utils/getAppliedCSS.js
+ */
 export default class GetCSS {
     constructor(el) {
-        // el.matches = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector || el.oMatchesSelector;
         this.element = el;
     }
 
