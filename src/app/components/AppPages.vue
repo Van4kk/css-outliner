@@ -1,7 +1,7 @@
 <template>
     <div id="css-outliner-in-root-container" style="right: 1.5rem" ref="appContainer">
         <div id="css-outliner-wrapper">
-            <Header @moveExtension="moveAppContainer" @stopApp="changeActiveMenu" />
+            <Header @moveExtension="moveAppContainer" />
             <div id="css-outliner-content">
                 <keep-alive>
                     <component :active-element-id="pageCondition.activeElementId" :is="pageCondition.activePage"></component>
@@ -28,6 +28,7 @@ export default {
     components: { Icon, Navigation, Header, ElementProperties, PageAssets, PageColorPalette, Tools, Settings },
     setup() {
         const appContainer = ref(null);
+
         const moveAppContainer = (styles) => {
             appContainer.value.style.setProperty('right', '');
             appContainer.value.style.setProperty('left', '');

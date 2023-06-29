@@ -27,12 +27,6 @@
             >
                 <Icon :class="[condition.isPauseActive ? 'text-primary' : 'text-white']" name="pause" stroke-width="2.5" />
             </button>
-            <button @click="stopAction"
-                    class="p-2"
-                    title="Back to welcome"
-            >
-                <Icon name="stop" fill="rgba(188, 201, 219, 1)" />
-            </button>
         </div>
         <div class="flex-grow"></div>
         <button @click="closeExtension"
@@ -69,10 +63,6 @@ export default {
             condition.isOnLeft = !condition.isOnLeft;
         };
 
-        const stopAction = () => {
-            emit('stopApp', 0, 'element-properties');
-        };
-
         const toggleClass = (status, cssClass) => {
             condition[status] = !condition[status];
             document.body.classList.toggle(cssClass);
@@ -88,9 +78,6 @@ export default {
             }
             if (event.key === 'f') {
                 toggleClass('isPauseActive','css-outliner-display-pause');
-            }
-            if (event.key === 's') {
-                stopAction();
             }
             if (event.key === 'o') {
                 toggleClass('isOutlineActive','css-outliner-display-outline');
@@ -118,7 +105,6 @@ export default {
 
         return {
             condition,
-            stopAction,
             moveExtensionOnX,
             closeExtension,
             toggleClass,
