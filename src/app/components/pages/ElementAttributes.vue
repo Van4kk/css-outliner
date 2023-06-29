@@ -1,8 +1,28 @@
 <template>
-    <div class="w-[307px] ml-auto">
+    <div id="css-outliner-element-attributes-tab-wrapper">
+        <form id="css-outliner-element-attributes-tab-attribute-form" @submit.prevent="addAttribute">
+            <div class="flex-grow">
+                <input id="css-outliner-element-attributes-tab-attribute-name-input"
+                       type="text"
+                       v-model="condition.key"
+                       placeholder="Add attribute"
+                       required
+                />
+                <input id="css-outliner-element-attributes-tab-attribute-value-input"
+                       type="text"
+                       v-model="condition.keyValue"
+                       placeholder="Add attribute value"
+                />
+            </div>
+            <div class="shrink-0">
+                <button id="css-outliner-element-attributes-tab-attribute-submit-button" type="submit">
+                    <Icon name="plus" />
+                </button>
+            </div>
+        </form>
         <div v-for="(value, key) in condition.attributes"
              :key="key"
-             class="group rounded px-4 mb-2 py-2 border border-white-hover focus-within:border-primary"
+             class="group rounded px-4 mb-2 py-2 border border-white-hover hover:border-primary focus-within:border-primary"
         >
             <label class="text-sm.5 text-white/40" :for="key">{{ key }}</label>
             <div class="flex items-center">
@@ -20,8 +40,9 @@
     </div>
 </template>
 <script>
-import { onMounted, reactive, watch } from "vue";
+import { onMounted, reactive } from "vue";
 import Icon from "../vui/Icon.vue";
+import { getFilteredAttributes } from "../../utils/helpers";
 
 export default {
     name: 'ElementAttributes',
@@ -31,7 +52,8 @@ export default {
 
         const condition = reactive({
             attributes: {},
-            key: ''
+            key: '',
+            keyValue: ''
         });
 
         const init = () => {
@@ -39,33 +61,28 @@ export default {
 
             if (!element) return;
 
-            const attributes = getFilteredAttributes(element);
+            //for better readability
+            const attributes = getFilteredAttributes(element, avoidAttributes);
 
             condition.attributes = attributes;
         };
 
-        function getFilteredAttributes(element) {
-            const attributes = {};
-
-            for (let i = 0; i < element.attributes.length; i++) {
-                const attr = element.attributes[i];
-                const { name, value } = attr;
-
-                if (!avoidAttributes.includes(name)) {
-                    attributes[name] = value;
-                }
-            }
-
-            return attributes;
-        }
-
         const addAttribute = () => {
             if (condition.key === '' || avoidAttributes.includes(condition.key.toLowerCase()) || condition.attributes[condition.key]) return;
 
-            updateAttribute(condition.key, '');
+            const newAttribute = condition.key.trim();
+            const newValue = condition.keyValue.trim();
 
-            condition.attributes[condition.key] = '';
+            if (newAttribute === '') return;
+
+            updateAttribute(newAttribute, newValue);
+
+            condition.attributes = {
+                ...condition.attributes,
+                [newAttribute]: newValue
+            };
             condition.key = '';
+            condition.keyValue = '';
         };
 
         const updateAttribute = (key, value) => {

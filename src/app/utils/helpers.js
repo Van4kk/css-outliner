@@ -134,3 +134,30 @@ export function addAppCss(contentCss) {
 export function isIdenticalExisting(element){
     return document.querySelector(element);
 }
+
+export function prepareString(string) {
+    let formattedString = string.replace(/[^\w\s-]/g, '');
+
+    formattedString = formattedString.replace(/\b\w/g, function(match) {
+        return match.toUpperCase();
+    });
+
+    formattedString = formattedString.replace(/-/g, ' ');
+
+    return formattedString;
+}
+
+export function getFilteredAttributes(element, avoidAttributes) {
+    const attributes = {};
+
+    for (let i = 0; i < element.attributes.length; i++) {
+        const attr = element.attributes[i];
+        const { name, value } = attr;
+
+        if (!avoidAttributes.includes(name)) {
+            attributes[name] = value;
+        }
+    }
+
+    return attributes;
+}
