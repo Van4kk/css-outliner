@@ -34,15 +34,15 @@ export default class GlobalEvent {
 
     static eventHandler(target) {
         const isPaused = document.body.classList.contains('#css-outliner-display-pause');
-        const isMatchExtensionElement = target.matches('#css-outliner,[selected-element],html');
+        const isMatchExtensionElement = target.matches('#css-outliner,[css-outliner-selected-element],html');
 
         if (isMatchExtensionElement || isPaused) return;
 
-        const activeElement = document.querySelector('[selected-element]');
-        activeElement?.removeAttribute('selected-element');
+        const activeElement = document.querySelector('[css-outliner-selected-element]');
+        activeElement?.removeAttribute('css-outliner-selected-element');
 
-        target.setAttribute('selected-element', '');
-        target.classList.remove('hovered-element');
+        target.setAttribute('css-outliner-selected-element', '');
+        target.classList.remove('css-outliner-hovered-element');
 
         this.callback();
     }
