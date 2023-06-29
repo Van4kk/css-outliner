@@ -48,7 +48,7 @@ export default {
     name: 'ElementAttributes',
     components: { Icon },
     setup() {
-        const avoidAttributes = ['style', 'selected-element'];
+        const avoidAttributes = ['style', 'css-outliner-selected-element'];
 
         const condition = reactive({
             attributes: {},
