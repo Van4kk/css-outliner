@@ -40,7 +40,7 @@ function insertShadowRoot(shadowRoot) {
         const activeElement = document.querySelector('[selected-element]');
         if (activeElement) activeElement.removeAttribute('selected-element');
 
-        ['css-outliner-pause', 'css-outliner-display-grid', 'css-outliner-pause', 'hovered-element'].forEach((classes) => {
+        ['css-outliner-display-grid', 'css-outliner-display-pause', 'css-outliner-display-background', 'hovered-element'].forEach((classes) => {
             document.body.classList.remove(classes);
         });
     };
