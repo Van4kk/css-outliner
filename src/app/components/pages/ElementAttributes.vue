@@ -57,7 +57,7 @@ export default {
         });
 
         const init = () => {
-            const element = document.querySelector('[selected-element]');
+            const element = document.querySelector('[css-outliner-selected-element]');
 
             if (!element) return;
 
@@ -87,14 +87,14 @@ export default {
 
         const updateAttribute = (key, value) => {
             const newAttribute = value;
-            const element = document.querySelector('[selected-element]');
+            const element = document.querySelector('[css-outliner-selected-element]');
 
             condition.attributes[key] = newAttribute;
             element.setAttribute(key, newAttribute);
         };
 
         const deleteAttribute = (key) => {
-            const element = document.querySelector('[selected-element]');
+            const element = document.querySelector('[css-outliner-selected-element]');
             element.removeAttribute(key);
 
             delete condition.attributes[key];
