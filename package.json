@@ -1,6 +1,7 @@
 {
     "name": "css-outliner",
     "version": "1.0.0",
+    "versionName": "The Beginning ✝\uFE0F",
     "private": true,
     "description": "Adding outline for chosen HTML element and many other tools for CSS.",
     "main": "src/app/css-outliner.js",

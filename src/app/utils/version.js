@@ -1,3 +1,5 @@
-export default function () {
-    return '1.0.0 The Beginning ✝️';
+const { version, versionName } =  require('../../../package.json');
+
+export default function (){
+    return version + ' ' + versionName;
 }
