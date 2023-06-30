@@ -44,15 +44,15 @@ export default {
                 const properties = new HtmlElement(target);
                 state.properties = properties.getAll();
 
-                const element = document.querySelector('.hovered-element');
+                const element = document.querySelector('.css-outliner-hovered-element');
 
-                if (element) element.classList.remove('hovered-element');
+                if (element) element.classList.remove('css-outliner-hovered-element');
 
                 target.classList.add('hovered-element');
                 target.addEventListener(
                     'mouseleave',
                     () => {
-                        target.classList.remove('hovered-element');
+                        target.classList.remove('css-outliner-hovered-element');
                     },
                     { once: true },
                 );
