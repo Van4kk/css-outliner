@@ -40,7 +40,7 @@ export default {
             virtualElement.getBoundingClientRect = generateGetBoundingClientRect(clientX, clientY);
             state.popper.update();
 
-            if (!target.matches('.hovered-element,#css-outliner')) {
+            if (!target.matches('.css-outliner-hovered-element,#css-outliner')) {
                 const properties = new HtmlElement(target);
                 state.properties = properties.getAll();
 
@@ -48,7 +48,7 @@ export default {
 
                 if (element) element.classList.remove('css-outliner-hovered-element');
 
-                target.classList.add('hovered-element');
+                target.classList.add('css-outliner-hovered-element');
                 target.addEventListener(
                     'mouseleave',
                     () => {
