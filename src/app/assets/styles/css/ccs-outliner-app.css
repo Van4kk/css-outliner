@@ -25,7 +25,7 @@
     /* App Container */
     #css-outliner-in-root-container {
         @apply fixed z-full backdrop-blur-lg top-6 rounded;
-        background: linear-gradient(161deg, rgb(47, 49, 54, 0.7) 13.65%, rgb(18, 20, 22, 0.7) 81.89%), rgb(255, 255, 255, 0.001);
+        background: linear-gradient(161deg, rgb(47, 49, 54, 0.8) 13.65%, rgb(18, 20, 22, 0.9) 81.89%), rgb(255, 255, 255, 0.8);
     }
     #css-outliner-wrapper {
         @apply max-h-for-popup min-h-for-popup w-85 p-4 flex flex-col h-full;
@@ -178,7 +178,7 @@
         @apply w-[307px] ml-auto;
     }
     #css-outliner-element-attributes-tab-attribute-form {
-        @apply flex justify-between items-stretch gap-2 mb-2;
+        @apply flex justify-between items-stretch gap-1.5 mb-2;
     }
     #css-outliner-element-attributes-tab-attribute-name-input {
         @apply w-full rounded bg-transparent px-4 mb-1.5 py-2 border border-white-hover focus:border-primary;
