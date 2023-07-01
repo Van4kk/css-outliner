@@ -25,7 +25,7 @@
     /* App Container */
     #css-outliner-in-root-container {
         @apply fixed z-full backdrop-blur-lg top-6 rounded;
-        background: linear-gradient(161deg, rgb(47, 49, 54, 0.8) 13.65%, rgb(18, 20, 22, 0.9) 81.89%), rgb(255, 255, 255, 0.8);
+        background: linear-gradient(161deg, rgb(47, 49, 54, 0.8) 13.65%, rgb(18, 20, 22, 0.9) 81.89%), rgb(255, 255, 255, 0.3);
     }
     #css-outliner-wrapper {
         @apply max-h-for-popup min-h-for-popup w-85 p-4 flex flex-col h-full;
