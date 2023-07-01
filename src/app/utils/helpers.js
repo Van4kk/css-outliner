@@ -150,3 +150,97 @@ export function getFilteredAttributes(element, avoidAttributes) {
 
     return attributes;
 }
+
+export function optimizeTextColor(background) {
+
+    const rgb = background.replace(/[^\d,]/g, '').split(',').map(Number);
+
+    const [r, g, b] = rgb;
+
+    const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+
+    const threshold = 0.5;
+
+    return luminance > threshold ? '#000000' : 'rgba(188, 201, 219, 1)';
+}
+
+export function convertToHex(color) {
+
+    // Check if the color is in RGB format
+    if (color.startsWith('rgb')) {
+        // Process as RGB format
+        const rgb = color.match(/\d+/g).map(Number);
+        const [r, g, b] = rgb;
+
+        const hex = [r, g, b]
+            .map((num) => num.toString(16).padStart(2, '0'))
+            .join('');
+
+        return `#${hex}`;
+    }
+
+    // Check if the color is in RGBA format
+    if (color.startsWith('rgba')) {
+        const rgba = color.match(/\d+/g).map(Number);
+        const [r, g, b] = rgba.slice(0, 3);
+        const alpha = Math.round(rgba[3] * 255);
+        const hex = [r, g, b].map((num) => num.toString(16).padStart(2, '0')).join('');
+
+        return `#${hex}${alpha.toString(16).padStart(2, '0')}`;
+    }
+
+    // Check if the color is in HSLA format
+    if (color.startsWith('hsla')) {
+        const hsla = color.match(/\d+/g).map(Number);
+        const [h, s, l] = hsla.slice(0, 3);
+        const alpha = Math.round(hsla[3] * 255);
+        const rgb = hslToRgb(h / 360, s / 100, l / 100);
+        const hex = rgb.map((num) => num.toString(16).padStart(2, '0')).join('');
+
+        return `#${hex}${alpha.toString(16).padStart(2, '0')}`;
+    }
+
+    // Check if the color is in hexadecimal format
+    if (color.startsWith('#')) {
+        const hex = color.replace('#', '');
+
+        // Convert short hex format to full hex format
+        if (hex.length === 3) {
+            const fullHex = hex
+                .split('')
+                .map((char) => char.repeat(2))
+                .join('');
+
+            return `#${fullHex}`;
+        }
+
+        return color;
+    }
+
+    return color;
+}
+
+export function hslToRgb(h, s, l) {
+    let r, g, b;
+
+    if (s === 0) {
+        r = g = b = l; // achromatic
+    } else {
+        const hue2rgb = (p, q, t) => {
+            if (t < 0) t += 1;
+            if (t > 1) t -= 1;
+            if (t < 1 / 6) return p + (q - p) * 6 * t;
+            if (t < 1 / 2) return q;
+            if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+            return p;
+        };
+
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        const p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+}

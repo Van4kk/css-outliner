@@ -10,25 +10,20 @@
             </div>
             <div id="css-outliner-element-properties-page-tabs">
                 <div id="css-outliner-element-properties-tab" :class="{ 'css-outliner-element-properties-active-tab' : activeTab === 'proprieties'}">
-                    <ElementDetails :properties="condition.properties" :show-info="false" />
+                    <ElementDetails :properties="condition.properties" :show-info="false" :show-colors="true" />
                 </div>
                 <div id="css-outliner-element-attributes-tab" :class="{ 'css-outliner-element-properties-active-tab' : activeTab === 'attributes'}">
-                    <ElementAttributes />
+                    <ElementAttributes :active-element-id="activeElementId" />
                 </div>
             </div>
         </template>
         <Welcome v-else />
     </page-wrapper>
 <!--    TODO: element css with :hover, :active etc.-->
-<!--    TODO: element colors-->
-
-<!--    TODO: attribute tab-->
-<!--    TODO: list of attributes-->
-<!--    TODO: ability to add attributes and delete them too-->
 </template>
 <script>
 import Welcome from "./Welcome.vue";
-import {onMounted, reactive, ref, watch,} from "vue";
+import { onMounted, reactive, ref, watch } from "vue";
 import ElementDetails from "../../components/vui/sectinos/ElementDetails";
 import HtmlElement from "./../../utils/HtmlElement";
 import GetCss from "./../../utils/GetCss";
@@ -39,8 +34,8 @@ export default {
     components: { ElementAttributes, PageWrapper, Welcome, ElementDetails },
     props: {
         activeElementId: {
-            type: Number,
-            default: 0
+            type: [Number, String],
+            default: 0,
         },
     },
     setup(props) {
@@ -49,18 +44,21 @@ export default {
             properties: null,
             appliedCSS: null,
         });
+
         const activeTab = ref('proprieties');
 
         function init() {
-            const target = document.querySelector('[selected-element]');
+            if (!isNaN(props.activeElementId)) {
+                const target = document.querySelector('[css-outliner-selected-element]');
 
-            if (!target) return;
+                if (!target) return;
 
-            const properties = new HtmlElement(target);
+                const properties = new HtmlElement(target);
 
-            condition.properties = properties.getAll();
-            condition.appliedCSS = new GetCss(target).all();
-            condition.isElementSelected = true;
+                condition.properties = properties.getAll();
+                condition.appliedCSS = new GetCss(target).all();
+                condition.isElementSelected = true;
+            }
         }
 
         const switchTab = (tabName) => {

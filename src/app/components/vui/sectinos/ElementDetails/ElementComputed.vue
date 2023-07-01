@@ -1,11 +1,10 @@
 <template>
     <div class="css-outliner-element-details-computed">
         <span>{{ title }}</span>
-        <span
-                v-for="direction in directions"
-                :key="direction"
-                :class="[direction, isVertical(direction) ? 'horizontal-center' : 'vertical-center']"
-                :style="{ [direction]: '5px' }"
+        <span v-for="direction in directions"
+              :key="direction"
+              :class="[direction, isVertical(direction) ? 'horizontal-center' : 'vertical-center']"
+              :style="{ [direction]: '5px' }"
         >
       {{ computedStyles[`${title}-${direction}`] }}
     </span>

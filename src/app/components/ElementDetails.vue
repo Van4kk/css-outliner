@@ -3,6 +3,7 @@
         <ElementDetails
             :properties="state.properties"
             v-if="state.properties !== null"
+            :show-colors="false"
         />
     </div>
 </template>
