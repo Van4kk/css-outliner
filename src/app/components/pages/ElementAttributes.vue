@@ -40,14 +40,20 @@
     </div>
 </template>
 <script>
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, watch } from "vue";
 import Icon from "../vui/Icon.vue";
 import { getFilteredAttributes } from "../../utils/helpers";
 
 export default {
     name: 'ElementAttributes',
     components: { Icon },
-    setup() {
+    props: {
+        activeElementId: {
+            type: Number,
+            default: 0,
+        },
+    },
+    setup(props) {
         const avoidAttributes = ['style', 'css-outliner-selected-element'];
 
         const condition = reactive({
@@ -100,6 +106,8 @@ export default {
             delete condition.attributes[key];
         };
 
+
+        watch(() => props.activeElementId, init);
         onMounted(init);
 
         return {
