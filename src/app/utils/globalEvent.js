@@ -2,6 +2,7 @@
  * @author https://github.com/Kholid060/inspect-css/blob/master/src/utils/globalEvent.js
  */
 export default class GlobalEvent {
+
     static init(callback) {
         this.callback = callback;
         this.bindMouseEvent = this.clickHandler.bind(this);
@@ -22,7 +23,7 @@ export default class GlobalEvent {
 
     static keyupHandler({ code, ctrlKey }) {
         if (ctrlKey && code === 'Space') {
-            const target = document.querySelector('.hover-element');
+            const target = document.querySelector('.css-outliner-hovered-element');
 
             this.eventHandler(target);
         }
@@ -33,7 +34,7 @@ export default class GlobalEvent {
     }
 
     static eventHandler(target) {
-        const isPaused = document.body.classList.contains('#css-outliner-display-pause');
+        const isPaused = document.body.classList.contains('css-outliner-display-pause');
         const isMatchExtensionElement = target.matches('#css-outliner,[css-outliner-selected-element],html');
 
         if (isMatchExtensionElement || isPaused) return;
