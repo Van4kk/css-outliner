@@ -48,17 +48,15 @@ export default {
         const activeTab = ref('proprieties');
 
         function init() {
-            if (!isNaN(props.activeElementId)) {
-                const target = document.querySelector('[css-outliner-selected-element]');
+            const target = document.querySelector('[css-outliner-selected-element]');
 
-                if (!target) return;
+            if (!target) return;
 
-                const properties = new HtmlElement(target);
+            const properties = new HtmlElement(target);
 
-                condition.properties = properties.getAll();
-                condition.appliedCSS = new GetCss(target).all();
-                condition.isElementSelected = true;
-            }
+            condition.properties = properties.getAll();
+            condition.appliedCSS = new GetCss(target).all();
+            condition.isElementSelected = true;
         }
 
         const switchTab = (tabName) => {

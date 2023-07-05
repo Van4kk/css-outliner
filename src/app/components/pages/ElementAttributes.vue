@@ -49,7 +49,7 @@ export default {
     components: { Icon },
     props: {
         activeElementId: {
-            type: Number,
+            type: [Number, String],
             default: 0,
         },
     },
