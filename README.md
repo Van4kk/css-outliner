@@ -30,12 +30,12 @@
 </p>
 
 <p align="center">
-    <a href="#features">Key Features</a> •
-    <a href="#download">Download</a> •
-    <a href="#changelog">Changelog</a> •
-    <a href="#appearance">Appearance</a> •
-    <a href="#support">Support</a> •
-    <a href="#license">License</a>
+    <a href="#features-art">Key Features</a> •
+    <a href="#download-open_file_folder">Download</a> •
+    <a href="#changelog-hammer_and_pick">Changelog</a> •
+    <a href="#appearance-framed_picture">Appearance</a> •
+    <a href="#support-call_me_hand">Support</a> •
+    <a href="#license-book">License</a>
 </p>
 
 <br>
