@@ -22,7 +22,7 @@ export default {
         },
         color: {
             type: String,
-            default: '#7f58af',
+            default: 'rgb(40, 241, 169, 1)',
         },
         duration: {
             type: String,
