@@ -1,15 +1,14 @@
 <template>
-    <component
-            :is="tag"
-            role="button"
-            class="relative transition"
-            :class="[
-                className,
-                color ? color : variants[variant],
-                icon ? 'p-2' : 'py-2 px-4',
-                { 'opacity-70': disabled, 'pointer-events-none': disabled },
-            ]"
-            v-bind="{ disabled: disabled, ...$attrs }"
+    <component :is="tag"
+               role="button"
+               class="relative transition"
+               :class="[
+                   className,
+                   color ? color : variants[variant],
+                   icon ? 'p-2' : 'py-2 px-4',
+                   { 'opacity-70': disabled, 'pointer-events-none': disabled },
+               ]"
+               v-bind="{ disabled: disabled, ...$attrs }"
     >
     <span class="flex justify-center h-full items-center">
         <slot></slot>
@@ -23,6 +22,7 @@
 import Spinner from "./Spinner.vue";
 
 export default {
+    name: 'VuiButton',
     components: { Spinner },
     props: {
         className: {
