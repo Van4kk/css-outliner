@@ -41,8 +41,8 @@
 </template>
 <script>
 import { onMounted, reactive, watch } from "vue";
-import Icon from "../vui/Icon.vue";
-import { getFilteredAttributes } from "../../utils/helpers";
+import Icon from "../../vui/Icon.vue";
+import { getFilteredAttributes } from "../../../utils/helpers";
 
 export default {
     name: 'ElementAttributes',

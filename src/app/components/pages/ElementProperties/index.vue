@@ -19,15 +19,15 @@
         </template>
         <Welcome v-else />
     </page-wrapper>
-<!--    TODO: element css with :hover, :active etc.-->
+  <!--    TODO: element css with :hover, :active etc.-->
 </template>
 <script>
 import Welcome from "./Welcome.vue";
 import { onMounted, reactive, ref, watch } from "vue";
-import ElementDetails from "../../components/vui/sectinos/ElementDetails";
-import HtmlElement from "./../../utils/HtmlElement";
-import GetCss from "./../../utils/GetCss";
-import PageWrapper from "../vui/sectinos/PageWrapper.vue";
+import ElementDetails from "../../../components/vui/sectinos/ElementDetails";
+import HtmlElement from "../../../utils/HtmlElement";
+import GetCss from "../../../utils/GetCss";
+import PageWrapper from "../../vui/sectinos/PageWrapper.vue";
 import ElementAttributes from "./ElementAttributes.vue";
 
 export default {
