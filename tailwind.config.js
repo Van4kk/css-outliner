@@ -4,13 +4,14 @@ module.exports = {
         "./src/**/*.{vue,js,ts,jsx,tsx}",
     ],
     darkMode: 'class',
-    mode: 'jit',
+    mode: process.env.NODE_ENV ? 'jit' : undefined,
     theme: {
         fontSize: {
             xs: '12px',
             sm: '14px',
             'sm.5': '15px',
             base: '16px',
+            'base.5': '17px',
             lg: '18px',
             xl: '20px',
             '2xl': '24px',
@@ -92,6 +93,7 @@ module.exports = {
                 '4/5': '80%',
                 'tabs': '616px',
                 'tab': '308px',
+                'dropdown-options': '304.69px'
             },
             height: {
                 '70': '280px',

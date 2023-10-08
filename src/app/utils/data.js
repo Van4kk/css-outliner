@@ -129,21 +129,24 @@ export const shortcutsOptions = [
     },
 ];
 
-export const appActiveMenu = [
+export const pageAssetsOptions = [
     {
-        id: '',
-        name: '',
-        icon: '',
+        name: 'All types'
+    },
+    {
+        name: 'Image'
+    },
+    {
+        name: 'SVG'
+    },
+    {
+        name: 'Video'
+    },
+    {
+        name: 'Icon'
     },
 ];
 
-export const debugDropdown = [
-    {
-        id: '',
-        name: '',
-        icon: '',
-    },
-];
 
 export const ex = [
     {

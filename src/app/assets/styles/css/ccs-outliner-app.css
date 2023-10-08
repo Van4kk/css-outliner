@@ -203,6 +203,25 @@
     }
 
     /* Content - Page Assets Page */
+    #css-outliner-page-assets {
+        @apply w-full;
+    }
+    #css-outliner-page-assets-actions {
+        @apply flex gap-2 mb-2.5;
+    }
+    #css-outliner-page-assets-download-all {
+        @apply w-[148.34500px] h-[38.21px] flex flex-col justify-between items-center text-base pt-2 text-white rounded border border-white-hover bg-transparent hover:text-primary hover:bg-primary-horizon hover:border-primary overflow-hidden cursor-pointer;
+    }
+    #css-outliner-page-assets-download-all > div.css-outliner-loading-spinner {
+        @apply overflow-hidden;
+    }
+    #css-outliner-page-assets-grid-wrapper {
+        @apply grid grid-cols-2 gap-3;
+    }
+    .css-outliner-page-assets-item {
+        @apply bg-primary-horizon/10 rounded p-3;
+    }
+
     /* Content - Page Colors Page */
     /* Content - Development Tools Page */
     /* Content - App Settings Page */
@@ -288,5 +307,26 @@
     }
     .glider {
         @apply absolute flex h-full w-1/2 z-10 bg-primary-horizon rounded transition-200;
+    }
+    .css-outliner-drop-down {
+        @apply relative overflow-hidden text-left;
+    }
+    .css-outliner-drop-down-selected-option {
+        @apply flex justify-between items-center select-none py-1.5 px-3 text-white bg-transparent border-white-hover border rounded overflow-hidden cursor-pointer hover:bg-primary-horizon hover:text-primary hover:border-primary;;
+    }
+    .css-outliner-drop-down-selected-option > span {
+        @apply text-base;
+    }
+    .css-outliner-drop-down-selected-option > svg {
+        @apply w-6 h-6;
+    }
+    .css-outliner-drop-down-options {
+        @apply will-change-auto absolute z-10 mt-2.5 -translate-y-full opacity-0 invisible text-base text-white border-white bg-horizon border rounded overflow-hidden cursor-pointer;
+    }
+    .css-outliner-drop-down-options.css-outliner-drop-down-options-dropped {
+        @apply will-change-auto fixed translate-y-0 opacity-100 visible;
+    }
+    .css-outliner-drop-down-option {
+        @apply will-change-auto text-white my-1 py-1.5 px-4 bg-transparent first:rounded-t first:mt-0 last:mb-0 last:rounded-b hover:bg-primary-horizon hover:text-primary hover:border-primary;
     }
 }

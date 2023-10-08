@@ -18,7 +18,7 @@ import Navigation from "./vui/sectinos/Navigation.vue";
 import Header from "./vui/sectinos/Header.vue";
 import Icon from "./vui/Icon.vue";
 import ElementProperties from "./pages/ElementProperties";
-import PageAssets from "./pages/PageAssets.vue";
+import PageAssets from "./pages/PageAssets";
 import PageColorPalette from "./pages/PageColorPalette.vue";
 import Tools from "./pages/Tools.vue";
 import Settings from "./pages/Settings.vue";
