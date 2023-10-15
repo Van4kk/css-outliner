@@ -25,7 +25,6 @@
                     <ImageBox v-if="asset.type === 'image'" :image-properties="asset" />
                     <SVGBox v-if="asset.type === 'svg'" :svg-properties="asset" />
                     <VideoBox v-if="asset.type === 'video'" :video-properties="asset" />
-                    <IconBox v-if="asset.type === 'icon'" :icon-properties="asset" />
                 </div>
             </div>
         </div>
@@ -46,11 +45,10 @@ import Spinner from "../../vui/Spinner.vue";
 import SVGBox from "./SVGBox.vue";
 import ImageBox from "./ImageBox.vue";
 import VideoBox from "./VideoBox.vue";
-import IconBox from "./IconBox.vue";
 
 export default {
     name: 'PageAssets',
-    components: { IconBox, VideoBox, ImageBox, SVGBox, Spinner, DropDown, PageWrapper },
+    components: { VideoBox, ImageBox, SVGBox, Spinner, DropDown, PageWrapper },
     setup() {
         const assets = ref([]);
         const dropDownOptions = pageAssetsOptions;
@@ -61,25 +59,32 @@ export default {
         });
 
         const getAssets = () => {
-            const assetsList = Array.from(document.querySelectorAll('img, svg, video, i'));
-            console.log(assetsList)
+            const assetsList = Array.from(document.querySelectorAll('img, svg, video'));
+
             assets.value = assetsList.map(asset => {
                 let assetInfo = {};
                 if (asset.tagName.toLowerCase() === 'img') {
                     assetInfo.type = 'image';
                     assetInfo.src = asset.src;
                     assetInfo.alt = asset.alt;
+                    assetInfo.width = asset.width;
+                    assetInfo.height = asset.height;
                 } else if (asset.tagName.toLowerCase() === 'svg') {
                     assetInfo.type = 'svg';
                     assetInfo.src = asset.outerHTML;
                 } else if (asset.tagName.toLowerCase() === 'video') {
                     assetInfo.type = 'video';
                     assetInfo.sources = Array.from(asset.querySelectorAll('source')).map(source => source.src);
-                } else {
-                    assetInfo.type = 'icon';
-                    assetInfo.src = asset.src;
+                    assetInfo.width = asset.videoWidth;
+                    assetInfo.height = asset.videoHeight;
+                    assetInfo.duration = asset.duration;
+                    assetInfo.isGif = false;
+                    // if (assetInfo.src.includes('.gif')) {
+                    //     assetInfo.type = 'gif';
+                    //     assetInfo.isGif = false;
+                    // }
                 }
-                console.log(assetInfo)
+
                 return assetInfo;
             });
         };
