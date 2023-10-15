@@ -11,6 +11,11 @@
 </template>
 <script>
 
+// preview
+// source
+// type icon film
+// alt
+
 export default {
     name: 'VideoBox',
     props: {
