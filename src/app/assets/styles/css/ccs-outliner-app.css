@@ -221,6 +221,18 @@
     .css-outliner-page-assets-item {
         @apply bg-primary-horizon/10 rounded p-3;
     }
+    .css-outliner-page-assets-item-box {
+        @apply group-hover:opacity-100 absolute text-white bg-horizon/80 left-0 right-0 bottom-0 top-0 h-full opacity-0 w-full grid grid-cols-4 grid-rows-2;
+    }
+
+    /* Svg box */
+    .css-outliner-page-assets-item-box-svg-copy-button {
+        @apply col-span-4 row-span-4 rounded border border-transparent mb-0.5 mr-1 ml-1 mt-1 hover:bg-primary-horizon/60 will-change-auto;
+    }
+    .css-outliner-page-assets-item-box-svg-export-button {
+        @apply col-span-4 row-span-1 rounded border border-transparent bg-primary-horizon/40 mb-1 mr-1 ml-1 mt-0.5 hover:bg-primary-horizon/70;
+    }
+
 
     /* Content - Page Colors Page */
     /* Content - Development Tools Page */
