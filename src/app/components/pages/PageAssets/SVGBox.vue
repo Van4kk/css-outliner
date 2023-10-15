@@ -1,7 +1,7 @@
 <template>
     <div class="css-outliner-page-assets-item-box">
         <button @click="copySVGCode(svgProperties.src)"
-                class="css-outliner-page-assets-item-box-svg-copy-button"
+                class="css-outliner-page-assets-item-box-grid-full-cover"
         >
             <div class="flex flex-col items-center justify-center">
                 <span class="group-hover:translate-y-0">
@@ -13,7 +13,7 @@
             </div>
         </button>
         <button @click="exportSVG(svgProperties.src, svgProperties.type)"
-                class="css-outliner-page-assets-item-box-svg-export-button"
+                class="css-outliner-page-assets-item-box-grid-button"
         >
             <span>
                 {{ condition.svgExported ? 'SVG exported!' : `Export ${ svgProperties.type }` }}

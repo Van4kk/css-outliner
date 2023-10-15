@@ -224,12 +224,22 @@
     .css-outliner-page-assets-item-box {
         @apply group-hover:opacity-100 absolute text-white bg-horizon/80 left-0 right-0 bottom-0 top-0 h-full opacity-0 w-full grid grid-cols-4 grid-rows-2;
     }
-
-    /* Svg box */
-    .css-outliner-page-assets-item-box-svg-copy-button {
+    .css-outliner-page-assets-item-box-grid-1 {
+        @apply col-span-2 row-span-1 rounded border border-transparent mb-0.5 mr-0.5 ml-1 mt-1 hover:bg-primary-horizon/60 will-change-auto;
+    }
+    .css-outliner-page-assets-item-box-grid-2 {
+        @apply col-span-2 row-span-1 rounded border border-transparent mb-0.5 mr-1 ml-0.5 mt-1 hover:bg-primary-horizon/60 will-change-auto;
+    }
+    .css-outliner-page-assets-item-box-grid-3 {
+        @apply col-span-2 row-span-1 rounded border border-transparent mb-0.5 mr-0.5 ml-1 mt-0.5 hover:bg-primary-horizon/60 will-change-auto;
+    }
+    .css-outliner-page-assets-item-box-grid-4 {
+        @apply col-span-2 row-span-1 rounded border border-transparent mb-0.5 mr-1 ml-0.5 mt-0.5 hover:bg-primary-horizon/60 will-change-auto;
+    }
+    .css-outliner-page-assets-item-box-grid-full-cover {
         @apply col-span-4 row-span-4 rounded border border-transparent mb-0.5 mr-1 ml-1 mt-1 hover:bg-primary-horizon/60 will-change-auto;
     }
-    .css-outliner-page-assets-item-box-svg-export-button {
+    .css-outliner-page-assets-item-box-grid-button {
         @apply col-span-4 row-span-1 rounded border border-transparent bg-primary-horizon/40 mb-1 mr-1 ml-1 mt-0.5 hover:bg-primary-horizon/70;
     }
 
