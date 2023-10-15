@@ -236,6 +236,12 @@
     .css-outliner-page-assets-item-box-grid-4 {
         @apply col-span-2 row-span-1 rounded border border-transparent mb-0.5 mr-1 ml-0.5 mt-0.5 hover:bg-primary-horizon/60 will-change-auto;
     }
+    .css-outliner-page-assets-item-box-grid-full-top-row {
+        @apply col-span-4 row-span-1 rounded border border-transparent mb-0.5 mr-1 ml-1 mt-1 hover:bg-primary-horizon/60 will-change-auto;
+    }
+    .css-outliner-page-assets-item-box-grid-full-lower-row {
+        @apply col-span-4 row-span-1 rounded border border-transparent mb-0.5 mr-1 ml-1 mt-0.5 hover:bg-primary-horizon/60 will-change-auto;
+    }
     .css-outliner-page-assets-item-box-grid-full-cover {
         @apply col-span-4 row-span-4 rounded border border-transparent mb-0.5 mr-1 ml-1 mt-1 hover:bg-primary-horizon/60 will-change-auto;
     }
