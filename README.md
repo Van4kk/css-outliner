@@ -110,7 +110,7 @@
 
 ## Changelog :hammer_and_pick:
 <details>
-    <summary><h3>Version 1.0.0 The Beginning :orthodox_cross:</h3></summary>
+    <summary><h3>Version 1.0.0 The Beginning :pray:</h3></summary>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac ipsum sodales, dapibus libero id, commodo dui. Donec faucibus ultrices sollicitudin. Cras sapien metus, consequat ut ex at, tempor accumsan augue. Morbi at maximus mauris. Nam maximus iaculis quam at scelerisque. Donec turpis massa, tristique at urna non, pharetra iaculis mauris.
         <ul>
