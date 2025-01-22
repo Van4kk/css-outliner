@@ -7,18 +7,15 @@
         />
     </div>
 </template>
-<script>
-import { ref, onMounted, reactive, onUnmounted, } from 'vue';
-import ElementDetails from "./vui/sectinos/ElementDetails/index.vue";
-import { generateGetBoundingClientRect } from '../utils/helpers';
-import HtmlElement from '../utils/HtmlElement';
-import createPopper from '../utils/createPopper';
+<script lang="ts">
+import {ref, onMounted, reactive, onUnmounted} from 'vue';
+import {ElementDetails} from "@vui/sectinos/ElementDetails";
+import {generateGetBoundingClientRect} from '@utils/helpers';
+import {HtmlElement} from '@utils/HtmlElement';
+import createPopper from '@utils/createPopper';
 
-/**
- * @source https://github.com/Kholid060/inspect-css
- */
 export default {
-    components: { ElementDetails },
+    components: {ElementDetails},
     setup() {
         const container = ref(null);
         const state = reactive({
@@ -29,7 +26,7 @@ export default {
             getBoundingClientRect: generateGetBoundingClientRect(),
         };
 
-        function mouseMoveHandler({ target, clientX, clientY }) {
+        function mouseMoveHandler({target, clientX, clientY}) {
             const isPaused = document.body.classList.contains('css-outliner-display-pause');
             const isMatchExtensionEl = target.classList.contains('css-outliner');
 
@@ -52,10 +49,8 @@ export default {
                 target.classList.add('css-outliner-hovered-element');
                 target.addEventListener(
                     'mouseleave',
-                    () => {
-                        target.classList.remove('css-outliner-hovered-element');
-                    },
-                    { once: true },
+                    () => target.classList.remove('css-outliner-hovered-element'),
+                    {once: true},
                 );
             }
         }

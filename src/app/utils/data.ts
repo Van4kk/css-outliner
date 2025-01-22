@@ -1,3 +1,6 @@
+/**
+ * This file contains all the data that is used in the application.
+ */
 
 export const navigation = [
     {

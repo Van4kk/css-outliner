@@ -3,8 +3,8 @@
         <h1>{{hello}}</h1>
     </page-wrapper>
 </template>
-<script setup>
-import PageWrapper from "../vui/sectinos/PageWrapper.vue";
+<script setup lang="ts">
+import PageWrapper from "@vui/sectinos/PageWrapper.vue";
 
 const hello = 'Hello from Tools'
 //web developer tools

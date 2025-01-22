@@ -1,17 +1,17 @@
 <template>
     <page-wrapper>
-        <h1>{{hey}}</h1>
-        {{version()}}
+        <h1>{{ hey }}</h1>
+        {{ version() }}
     </page-wrapper>
 </template>
-<script>
-import PageWrapper from "../vui/sectinos/PageWrapper.vue";
-import version from "../../utils/version";
+<script lang="ts">
+import PageWrapper from "@vui/sectinos/PageWrapper.vue";
+import version from "@utils/version";
 
 export default {
     name: 'Settings',
     methods: {version},
-    components: { PageWrapper },
+    components: {PageWrapper},
     props: {},
     setup(props) {
         const hey = 'Hello From App Settings';

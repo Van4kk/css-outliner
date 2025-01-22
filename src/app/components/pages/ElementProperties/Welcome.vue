@@ -29,15 +29,15 @@
         </div>
     </div>
 </template>
-<script>
-import Icon from "../../vui/Icon.vue";
-import { shortcutsOptions } from "../../../utils/data";
-import { ref } from "vue";
-import KBD from "../../vui/Keyboard.vue";
+<script lang="ts">
+import Icon from "@vui/Icon.vue";
+import {shortcutsOptions} from "@utils/data";
+import {ref} from "vue";
+import KBD from "@vui/Keyboard.vue";
 
 export default {
     name: 'Welcome',
-    components: { KBD, Icon },
+    components: {KBD, Icon},
     props: {
         iconSize: {
             type: Number,

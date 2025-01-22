@@ -14,16 +14,16 @@
         </button>
     </div>
 </template>
-<script>
-import { ref, shallowReactive } from "vue";
-import { navigation } from "../../../utils/data";
-import Icon from "../Icon.vue";
+<script lang="ts">
+import {ref, shallowReactive} from "vue";
+import {navigation} from "@utils/data";
+import Icon from "@vui/Icon.vue";
 
 export default {
     name: 'Navigation',
-    components: { Icon },
+    components: {Icon},
     emits: ['changeActiveMenu'],
-    setup(props, { emit }) {
+    setup(props, {emit}) {
         const navigationData = shallowReactive(navigation)
         const activePage = ref('element-properties');
 

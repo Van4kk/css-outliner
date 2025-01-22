@@ -27,7 +27,7 @@
                 class="css-outliner-page-assets-item-box-grid-button overflow-hidden"
         >
             <span>
-                {{ condition.imageExported ? 'Image exported!' : `Export ${ imageProperties.type }` }}
+                {{ condition.imageExported ? 'Image exported!' : `Export ${imageProperties.type}` }}
             </span>
         </button>
     </div>
@@ -38,13 +38,13 @@
          class="w-full h-full object-cover"
     />
 </template>
-<script>
-import { inject, reactive } from "vue";
-import Icon from "../../vui/Icon.vue";
+<script lang="ts">
+import {inject, reactive} from "vue";
+import Icon from "@vui/Icon.vue";
 
 export default {
     name: 'ImageBox',
-    components: { Icon },
+    components: {Icon},
     props: {
         imageProperties: {
             type: Object,

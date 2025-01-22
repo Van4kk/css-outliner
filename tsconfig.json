@@ -1,0 +1,41 @@
+{
+  "extends": "@vue/tsconfig",
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": [
+      "es2023",
+      "dom"
+    ],
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@api/*": ["src/app/api/*"],
+      "@components/*": ["src/app/components/*"],
+      "@pages/*": ["src/app/components/pages/*"],
+      "@vui/*": ["src/app/components/vui/*"],
+      "@assets/*": ["src/app/assets/*"],
+      "@views/*": ["src/app/views/*"],
+      "@utils/*": ["src/app/utils/*"]
+    },
+    "types": [
+      "vite/client"
+    ],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

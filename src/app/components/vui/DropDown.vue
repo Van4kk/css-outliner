@@ -25,13 +25,13 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import Icon from "./Icon.vue";
-import { ref, watch } from "vue";
+import {ref, watch} from "vue";
 
 export default {
     name: 'DropDown',
-    components: { Icon },
+    components: {Icon},
     props: {
         className: {
             type: String,
@@ -64,7 +64,7 @@ export default {
             default: 'w-dropdown-options'
         }
     },
-    setup(props, { emit }) {
+    setup(props, {emit}) {
         const selected = ref(props.default ? props.default : (props.options.length > 0 ? props.options[0].name : null));
 
         const dropped = ref(false);

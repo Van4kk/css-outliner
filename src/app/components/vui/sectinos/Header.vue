@@ -37,11 +37,11 @@
         </button>
     </nav>
 </template>
-<script>
+<script lang="ts">
 import { shallowReactive, getCurrentInstance, onUnmounted, onMounted } from 'vue';
-import Icon from "../Icon.vue";
-import EyeDropper from "../EyeDropper.vue";
-import Button from "../Button.vue";
+import Icon from "@vui/Icon.vue";
+import EyeDropper from "@vui/EyeDropper.vue";
+import Button from "@vui/Button.vue";
 
 export default {
     components: { Button, EyeDropper, Icon },

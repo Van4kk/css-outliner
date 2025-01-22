@@ -6,8 +6,8 @@
         <div v-bind:style="[spinnerStyle]"></div>
     </div>
 </template>
-<script>
-import { validateDuration, calculatePropertyValue } from "../../utils/helpers";
+<script lang="ts">
+import {validateDuration, calculatePropertyValue} from "@utils/helpers";
 
 export default {
     name: 'Spinner',

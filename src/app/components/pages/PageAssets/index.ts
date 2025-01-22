@@ -1,0 +1,1 @@
+export {default as PageAssets} from './index.vue';

@@ -4,11 +4,11 @@
         <AppPages />
     </main>
 </template>
-<script>
-import AppPages from "./components/AppPages.vue";
-import ElementDetails from "./components/ElementDetails.vue";
+<script lang="ts">
+import AppPages from "@components/AppPages.vue";
+import ElementDetails from "@components/ElementDetails.vue";
 
 export default {
-    components: { ElementDetails, AppPages },
+    components: {ElementDetails, AppPages},
 };
 </script>

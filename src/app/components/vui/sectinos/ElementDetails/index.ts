@@ -1,0 +1,1 @@
+export {default as ElementDetails} from './index.vue';

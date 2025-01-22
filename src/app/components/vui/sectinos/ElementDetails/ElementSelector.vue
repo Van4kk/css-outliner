@@ -5,7 +5,7 @@
         <span>{{ selector.classes }}</span>
     </div>
 </template>
-<script>
+<script lang="ts">
 export default {
     props: {
         selector: {

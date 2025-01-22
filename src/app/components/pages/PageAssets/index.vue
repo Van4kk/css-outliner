@@ -34,23 +34,24 @@
     <!--  TODO: on hover appear the name with `..` and the ability to export only this image -->
     <!--  TODO: show the size of the image -->
 </template>
-<script>
-import { ref, shallowReactive, watch, watchEffect } from 'vue';
-import { saveAs } from 'file-saver';
+<script lang="ts">
+import {ref, shallowReactive, watch, watchEffect} from 'vue';
+import {saveAs} from 'file-saver';
 import JSZip from 'jszip';
-import { pageAssetsOptions } from "../../../utils/data";
-import PageWrapper from "../../vui/sectinos/PageWrapper.vue";
-import DropDown from "../../vui/DropDown.vue";
-import Spinner from "../../vui/Spinner.vue";
+import {pageAssetsOptions} from "@utils/data";
+import {AssetInfo} from "@utils/types";
+import PageWrapper from "@vui/sectinos/PageWrapper.vue";
+import DropDown from "@vui/DropDown.vue";
+import Spinner from "@vui/Spinner.vue";
 import SVGBox from "./SVGBox.vue";
 import ImageBox from "./ImageBox.vue";
 import VideoBox from "./VideoBox.vue";
 
 export default {
     name: 'PageAssets',
-    components: { VideoBox, ImageBox, SVGBox, Spinner, DropDown, PageWrapper },
+    components: {VideoBox, ImageBox, SVGBox, Spinner, DropDown, PageWrapper},
     setup() {
-        const assets = ref([]);
+        const assets = ref<AssetInfo[]>([]);
         const dropDownOptions = pageAssetsOptions;
         const condition = shallowReactive({
             //for the filter
@@ -59,33 +60,44 @@ export default {
         });
 
         const getAssets = () => {
-            const assetsList = Array.from(document.querySelectorAll('img, svg, video'));
+            const assetsList = Array.from(document.querySelectorAll('img, svg, video')) as (HTMLImageElement | SVGElement | HTMLVideoElement)[];
+            const seenImageSources = new Set<string>();
 
-            assets.value = assetsList.map(asset => {
-                let assetInfo = {};
+            assetsList.forEach((asset) => {
+                let assetInfo: AssetInfo = {type: 'image'}; // Default type
+
                 if (asset.tagName.toLowerCase() === 'img') {
+                    const imgAsset = asset as HTMLImageElement;
+
+                    // Skip image if the source is already seen
+                    if (seenImageSources.has(imgAsset.src)) return;
+                    seenImageSources.add(imgAsset.src);
+
                     assetInfo.type = 'image';
-                    assetInfo.src = asset.src;
-                    assetInfo.alt = asset.alt;
-                    assetInfo.width = asset.width;
-                    assetInfo.height = asset.height;
+                    assetInfo.src = imgAsset.src;
+                    assetInfo.alt = imgAsset.alt;
+                    assetInfo.width = imgAsset.width;
+                    assetInfo.height = imgAsset.height;
                 } else if (asset.tagName.toLowerCase() === 'svg') {
                     assetInfo.type = 'svg';
                     assetInfo.src = asset.outerHTML;
                 } else if (asset.tagName.toLowerCase() === 'video') {
+                    const videoAsset = asset as HTMLVideoElement;
                     assetInfo.type = 'video';
-                    assetInfo.sources = Array.from(asset.querySelectorAll('source')).map(source => source.src);
-                    assetInfo.width = asset.videoWidth;
-                    assetInfo.height = asset.videoHeight;
-                    assetInfo.duration = asset.duration;
+                    assetInfo.sources = Array.from(videoAsset.querySelectorAll('source')).map((source) => source.src);
+                    assetInfo.width = videoAsset.videoWidth;
+                    assetInfo.height = videoAsset.videoHeight;
+                    assetInfo.duration = videoAsset.duration;
                     assetInfo.isGif = false;
-                    // if (assetInfo.src.includes('.gif')) {
+
+                    // Optional: Check if it's a gif (based on file extension or other logic)
+                    // if (videoAsset.src.includes('.gif')) {
                     //     assetInfo.type = 'gif';
-                    //     assetInfo.isGif = false;
+                    //     assetInfo.isGif = true;
                     // }
                 }
 
-                return assetInfo;
+                assets.value.push(assetInfo);
             });
         };
 

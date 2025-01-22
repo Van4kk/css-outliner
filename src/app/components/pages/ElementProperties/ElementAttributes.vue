@@ -39,14 +39,14 @@
         </div>
     </div>
 </template>
-<script>
-import { onMounted, reactive, watch } from "vue";
-import Icon from "../../vui/Icon.vue";
-import { getFilteredAttributes } from "../../../utils/helpers";
+<script lang="ts">
+import {onMounted, reactive, watch} from "vue";
+import Icon from "@vui/Icon.vue";
+import {getFilteredAttributes} from "@utils/helpers";
 
 export default {
     name: 'ElementAttributes',
-    components: { Icon },
+    components: {Icon},
     props: {
         activeElementId: {
             type: [Number, String],

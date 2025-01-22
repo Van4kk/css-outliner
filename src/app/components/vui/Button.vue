@@ -18,12 +18,12 @@
         </div>
     </component>
 </template>
-<script>
+<script lang="ts">
 import Spinner from "./Spinner.vue";
 
 export default {
     name: 'VuiButton',
-    components: { Spinner },
+    components: {Spinner},
     props: {
         className: {
             type: String,

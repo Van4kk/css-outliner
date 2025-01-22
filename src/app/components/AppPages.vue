@@ -4,28 +4,29 @@
             <Header @moveExtension="moveAppContainer" />
             <div id="css-outliner-content">
                 <keep-alive>
-                    <component :active-element-id="pageCondition.activeElementId" :is="pageCondition.activePage"></component>
+                    <component :active-element-id="pageCondition.activeElementId"
+                               :is="pageCondition.activePage"></component>
                 </keep-alive>
             </div>
             <Navigation @changeActiveMenu="changeActiveMenu" />
         </div>
     </div>
 </template>
-<script>
-import { onMounted, onUnmounted, shallowReactive, ref } from 'vue';
-import globalEvent from "./../utils/globalEvent.js"
-import Navigation from "./vui/sectinos/Navigation.vue";
-import Header from "./vui/sectinos/Header.vue";
-import Icon from "./vui/Icon.vue";
-import ElementProperties from "./pages/ElementProperties";
-import PageAssets from "./pages/PageAssets";
-import PageColorPalette from "./pages/PageColorPalette.vue";
-import Tools from "./pages/Tools.vue";
-import Settings from "./pages/Settings.vue";
+<script lang="ts">
+import {onMounted, onUnmounted, shallowReactive, ref} from 'vue';
+import {GlobalEvent} from "@utils/globalEvent";
+import Navigation from "@vui/sectinos/Navigation.vue";
+import Header from "@vui/sectinos/Header.vue";
+import Icon from "@vui/Icon.vue";
+import {ElementProperties} from "@pages/ElementProperties";
+import {PageAssets} from "@pages/PageAssets";
+import PageColorPalette from "@pages/PageColorPalette.vue";
+import Tools from "@pages/Tools.vue";
+import Settings from "@pages/Settings.vue";
 
 export default {
     name: 'AppPages',
-    components: { Icon, Navigation, Header, ElementProperties, PageAssets, PageColorPalette, Tools, Settings },
+    components: {Icon, Navigation, Header, ElementProperties, PageAssets, PageColorPalette, Tools, Settings},
     setup() {
         const appContainer = ref(null);
 
@@ -45,15 +46,13 @@ export default {
             pageCondition.activeElementId = elementId;
         };
 
-        /**
-         * @source https://github.com/Kholid060/inspect-css
-         */
         onMounted(() => {
-            globalEvent.init(() => {
+            GlobalEvent.init(() => {
                 pageCondition.activeElementId += 1;
             });
         });
-        onUnmounted(() => globalEvent.removeListeners());
+
+        onUnmounted(() => GlobalEvent.removeListeners());
 
         return {
             appContainer,

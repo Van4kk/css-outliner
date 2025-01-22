@@ -16,7 +16,7 @@
                 class="css-outliner-page-assets-item-box-grid-button"
         >
             <span>
-                {{ condition.svgExported ? 'SVG exported!' : `Export ${ svgProperties.type }` }}
+                {{ condition.svgExported ? 'SVG exported!' : `Export ${svgProperties.type}` }}
             </span>
         </button>
     </div>
@@ -25,13 +25,13 @@
     >
     </div>
 </template>
-<script>
-import Icon from "../../vui/Icon.vue";
-import { reactive } from "vue";
+<script lang="ts">
+import Icon from "@vui/Icon.vue";
+import {reactive} from "vue";
 
 export default {
     name: 'SVGBox',
-    components: { Icon },
+    components: {Icon},
     props: {
         svgProperties: {
             type: Object,
@@ -57,7 +57,7 @@ export default {
         function exportSVG(svgCode, type) {
             condition.svgExported = true;
 
-            const blob = new Blob([svgCode], { type: "image/svg+xml" });
+            const blob = new Blob([svgCode], {type: "image/svg+xml"});
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
 

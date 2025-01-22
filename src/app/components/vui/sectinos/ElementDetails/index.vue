@@ -22,7 +22,7 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import ElementSelector from './ElementSelector.vue';
 import ElementComputed from './ElementComputed.vue';
 import Icon from "../../Icon.vue";

@@ -10,13 +10,13 @@
         <span>Not Supported by Your Browser</span>
     </div>
 </template>
-<script>
-import { useEyeDropper } from '@vueuse/core'
+<script lang="ts">
+import {useEyeDropper} from '@vueuse/core'
 
 export default {
     name: 'EyeDropper',
     setup() {
-        const { isSupported, open, sRGBHex } = useEyeDropper()
+        const {isSupported, open, sRGBHex} = useEyeDropper()
 
         return {
             isSupported,

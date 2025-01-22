@@ -48,7 +48,7 @@
         </span>
     </div>
 </template>
-<script>
+<script lang="ts">
 //I'll refactor this component later
 
 import { reactive } from "vue";
