@@ -1,4 +1,3 @@
-.idea
 node_modules
 /dist
 /web
@@ -9,8 +8,12 @@ TODO.md
 *.pub
 *.zip
 /artifacts
-package-lock.json
 mix-manifest.json
 manifest.json
 manifest1.json
 chrome
+mozilla
+safari
+opera
+edge
+yandex
