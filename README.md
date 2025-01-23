@@ -3,7 +3,7 @@
 <div align="center">
     <br>
     <a href="#" style="text-decoration: none">
-        <img src="src/app/assets/logo/css-outliner-logo.png" height="300" alt="Logo">
+        <img src="docs/css-outliner-logo.png" height="300" alt="Logo">
         <br>
         <h1 align="center" style="color: #ffffff">Css Outliner</h1>
     </a>
@@ -15,16 +15,17 @@
 <br>
 
 <p align="center">
-    <a href="">
+    <a href="" style="text-decoration: none">
         <img src="" alt="">
+        <img src="https://img.shields.io/chrome-web-store/v/fbopfffegfehobgoommphghohinpkego" alt="Chrome web store version"/>
     </a>
-    <a href="https://github.com/Van4kk/css-outliner/issues">
+    <a href="https://github.com/Van4kk/css-outliner/issues" style="text-decoration: none">
         <img src="https://img.shields.io/github/issues/van4kk/css-outliner.svg" alt="Issues">
     </a>
-    <a href="">
+    <a href="" style="text-decoration: none">
         <img src="https://img.shields.io/badge/contributions-welcome-orange.svg" alt="Contributors are welcome">
     </a>
-    <a href="#license">
+    <a href="#license" style="text-decoration: none">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Licence MIT">
     </a>
 </p>
@@ -126,26 +127,19 @@
 
 <br> 
 
-## Appearance :framed_picture:
-
-• inspired
-from [4ebur.net – Best VPN Proxy](https://chrome.google.com/webstore/detail/4eburnet-%E2%80%93-best-vpn-proxy/bpoljniljbghlopcdaojdpodmnjffdeb)
-
-<br>
-
 ## Support :call_me_hand:
 
 <div style="display: flex">
-    • Chrome &nbsp; <img src="src/app/assets/images/chrome.png" width="25" height="25" alt="Chrome Logo"><br>
+    • Chrome &nbsp; <img src="docs/chrome.png" width="25" height="25" alt="Chrome Logo"><br>
 </div>
 <div style="display: flex">
-    • Firefox &nbsp; <img src="src/app/assets/images/mozilla.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
+    • Firefox &nbsp; <img src="docs/mozilla.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
 </div>
 <div style="display: flex">
-    • Edge &nbsp; <img src="src/app/assets/images/edge.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
+    • Edge &nbsp; <img src="docs/edge.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
 </div>
 <div style="display: flex">
-    • Opera &nbsp; <img src="src/app/assets/images/opera.svg" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
+    • Opera &nbsp; <img src="docs/opera.png" width="25" height="25" alt="Chrome Logo"> &nbsp; Coming soon.. <br>
 </div>
 
 <br> 
